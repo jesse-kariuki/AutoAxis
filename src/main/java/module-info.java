@@ -13,4 +13,6 @@ module com.example.autoaxis {
 
     opens com.example.autoaxis to javafx.fxml;
     exports com.example.autoaxis;
+    exports com.example.autoaxis.controllers;
+    opens com.example.autoaxis.controllers to javafx.fxml;
 }
