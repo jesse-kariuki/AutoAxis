@@ -6,6 +6,7 @@
 }
 .button{
     -fx-background-color: #fff;
+    -fx-border-color:black;
 }
 
 .button:focused {
