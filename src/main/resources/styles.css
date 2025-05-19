@@ -1,0 +1,18 @@
+.vbox-background-image{
+    -fx-background-image: url("Images/road.jpg");
+
+
+
+}
+.button{
+    -fx-background-color: #fff;
+}
+
+.button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
+
+
