@@ -9,11 +9,44 @@
     -fx-border-color:black;
 }
 
+.button:hover{
+    -fx-cursor:hand;
+}
 .button:focused {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
+.sign_up {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 14px;
+    -fx-fill: #333333;
+    -fx-text-alignment: center;
+}
+
+.terms-text {
+    -fx-font-family: "Poppins Regular";
+    -fx-font-size: 10px;
+    -fx-fill: #999999;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-line-spacing: 1.2;
+}
+
+/* button-styles.css */
+
+/* Base button styles */
+.auth-button {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 45px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 5px;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0.2, 0, 1);
+    -fx-transition: all 0.2s ease;
+}
 
 
 
