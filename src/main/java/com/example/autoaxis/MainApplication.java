@@ -10,9 +10,9 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("SignUp_SignIn.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 426);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("CreateAccount.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        stage.setTitle("AutoAxis");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
