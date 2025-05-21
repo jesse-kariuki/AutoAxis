@@ -31,34 +31,34 @@
             </children>
         </HBox>
 
-        <!-- Main Content Split Pane -->
+        <!-- Main content box -->
         <HBox AnchorPane.topAnchor="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <!-- Left Side - Image Container -->
+            <!-- Image for the car -->
             <StackPane HBox.hgrow="ALWAYS" styleClass="image-container">
                 <ImageView fx:id="carImage" fitWidth="450" preserveRatio="true" styleClass="car-image">
                     <Image url="@../../../Images/cruiser-in-snow.jpg"/>
                 </ImageView>
             </StackPane>
 
-            <!-- Right Side - Login Form -->
+            <!-- Form-->
             <VBox alignment="CENTER" spacing="15.0" styleClass="login-form-container" HBox.hgrow="ALWAYS">
                 <padding>
                     <Insets top="30.0" right="40.0" bottom="30.0" left="40.0" />
                 </padding>
 
-                <!-- Logo/Avatar -->
+
                 <StackPane styleClass="logo-container">
                     <Circle radius="30" styleClass="logo-circle" />
                 </StackPane>
 
-                <!-- Login Title -->
+
                 <Label text="Login" styleClass="login-title">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Label>
 
-                <!-- Quote text -->
+                <!-- Quote -->
                 <VBox alignment="CENTER" spacing="5.0">
                     <Label text="&quot;Currus non solum ferrum est, sed libertas" styleClass="quote-text" textAlignment="CENTER" wrapText="true"/>
                     <Label text="in motu.&quot;" styleClass="quote-text" textAlignment="CENTER" wrapText="true"/>
@@ -68,13 +68,13 @@
 
                 <Region prefHeight="20.0" />
 
-                <!-- Email Field -->
+                <!-- Email text field-->
                 <VBox spacing="5.0">
                     <Label text="Email" styleClass="field-label"/>
                     <TextField styleClass="login-field" promptText="Enter your email"/>
                 </VBox>
 
-                <!-- Password Field -->
+                <!-- Password field -->
                 <VBox spacing="5.0">
                     <HBox alignment="CENTER_LEFT" spacing="5.0">
                         <Label text="Password" styleClass="field-label" HBox.hgrow="ALWAYS"/>
