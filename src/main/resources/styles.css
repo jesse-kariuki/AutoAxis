@@ -262,7 +262,7 @@
     -fx-font-size: 12px;
 }
 
-/* styles.css for minimal AutoAxis sign-up form */
+/* STYLING FOR THE CREATE ACCOUNT FORM */
 
 /* Main background */
 .background-pane {
@@ -276,7 +276,7 @@
 
 /* Form container */
 .form-container {
-    -fx-border-color: #f0f0f0;
+    -fx-border-color: black;
     -fx-border-width: 1px;
     -fx-border-radius: 15px;
     -fx-background-radius: 15px;
@@ -369,4 +369,130 @@
     -fx-font-size: 11px;
     -fx-fill: #757575;
     -fx-text-alignment: center;
+}
+
+
+/* THIS IS THE STYLE FOR THE LOGIN PAGE*/
+
+
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: white;
+}
+
+/* Language selector */
+.language-selector {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Sign up button */
+.sign-up-button {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+}
+
+.sign-up-button:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Image container styling */
+.image-container {
+    -fx-background-color: #f0f0f0;
+}
+
+.car-image {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+/* Login form container */
+.login-form-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+/* Logo styling */
+.logo-container {
+    -fx-padding: 10px;
+}
+
+.logo-circle {
+    -fx-fill: #d9d9d9;
+}
+
+/* Login title */
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Quote styling */
+.quote-text {
+    -fx-font-style: italic;
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+.quote-translation {
+    -fx-font-style: italic;
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+/* Form fields */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+}
+
+.login-field {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+    -fx-padding: 10px;
+    -fx-pref-height: 40px;
+}
+
+.login-field:focused {
+    -fx-border-color: #666666;
+}
+
+/* Hide password button */
+.hide-password-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #999999;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Terms checkbox */
+.terms-checkbox {
+    -fx-border-color: #cccccc;
+}
+
+.terms-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+}
+
+/* Login button */
+.login-button {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 25px;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-background-radius: 25px;
+
+}
+
+.login-button:hover {
+    -fx-background-color: #b3b3b3;
 }
