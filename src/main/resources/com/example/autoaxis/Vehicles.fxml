@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.autoaxis.controllers.VehiclesController"
+            prefHeight="800.0" prefWidth="1000.0" styleClass="main-container">
+
+    <!-- CSS Styling -->
+    <stylesheets>
+        <URL value="@../../../vehiclestyles.css" />
+    </stylesheets>
+
+    <!-- Top Navigation Bar -->
+    <top>
+        <VBox>
+            <!-- Logo and Navigation -->
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="nav-bar">
+                <padding>
+                    <Insets top="10" right="20" bottom="10" left="20"/>
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <ImageView fitHeight="30" fitWidth="30" styleClass="logo-image">
+                        <Image url="@../../../Images/car-icon.png"/>
+                    </ImageView>
+                    <Label text="AutoAxis" styleClass="logo-text"/>
+                </HBox>
+
+                <!-- Navigation Links -->
+                <HBox spacing="20" alignment="CENTER">
+                    <Button text="Home" styleClass="nav-button"/>
+                    <Button text="Vehicles" styleClass="nav-button, active"/>
+                    <Button text="Checkout" styleClass="nav-button"/>
+                    <Button text="Contact Us" styleClass="nav-button"/>
+                </HBox>
+
+                <!-- Contact Info -->
+                <HBox spacing="5" alignment="CENTER_RIGHT">
+                    <ImageView fitHeight="20" fitWidth="20" styleClass="phone-icon">
+                        <Image url="@../../../Images/phone-icon.png"/>
+                    </ImageView>
+                    <VBox>
+                        <Label text="Need help?" styleClass="help-text"/>
+                        <Label text="+254-123-456-789" styleClass="phone-number"/>
+                    </VBox>
+                </HBox>
+            </HBox>
+
+            <!-- Blue Accent Bar -->
+            <HBox styleClass="blue-accent-bar">
+                <padding>
+                    <Insets top="2" right="0" bottom="2" left="0"/>
+                </padding>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll">
+            <VBox spacing="0">
+                <!-- Vehicle Selection Area -->
+                <VBox styleClass="vehicle-selection-container">
+                    <padding>
+                        <Insets top="20" right="30" bottom="30" left="30"/>
+                    </padding>
+
+                    <!-- Section Title -->
+                    <Label text="Select a vehicle group" styleClass="section-title" alignment="CENTER"/>
+
+                    <!-- Vehicle Type Filters -->
+                    <HBox styleClass="vehicle-filters" alignment="CENTER" spacing="10">
+                        <Button text="All Vehicles" styleClass="filter-button, active"/>
+                        <Label text="•" styleClass="dot-separator"/>
+                        <Button text="Sedan" styleClass="filter-button"/>
+                        <Label text="•" styleClass="dot-separator"/>
+                        <Button text="SUV" styleClass="filter-button"/>
+                        <Label text="•" styleClass="dot-separator"/>
+                    </HBox>
+
+                    <!-- Vehicle Grid Container -->
+                    <VBox styleClass="vehicle-grid-container">
+                        <!-- First Row -->
+                        <HBox spacing="15" styleClass="vehicle-row">
+                            <!-- Mercedes Mayback Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/mercedes-mayback-card.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Mercedes" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.24,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="Sedan" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+
+                            <!-- Mercedes S-class Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/mercedes-S-class-sport.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Mercedes S-class" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.32,500" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="Sedan" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+
+                            <!-- Mercedes Card GLE-->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/mercede-gle.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Mercedes GLE" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.44,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="SUV" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+                        </HBox>
+
+                        <!-- Second Row -->
+                        <HBox spacing="15" styleClass="vehicle-row">
+                            <!-- Porsche 911 Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/porsche-sports.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Porsche 911 Turbo" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.39,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="Sports" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+
+                            <!-- Toyota Crown Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/toyota-crown.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Toyota Crown" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.35,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="Sedan" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Manual" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+
+                            <!-- Porsche Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/porsche-suv.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Porsche Cayenne" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.45,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="SUV" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+                        </HBox>
+
+                        <!-- Third Row -->
+                        <HBox spacing="15" styleClass="vehicle-row">
+                            <!-- Mercedes E-class Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/mercedes-E-class.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Mercedes E-class" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.15,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="sedan" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+
+                            <!-- Toyota Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/toyota-landcruiser.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="Toyota Landcruiser" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="Ksh.50,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="SUV" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Manual" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+
+                            <!-- BMW Card -->
+                            <VBox styleClass="vehicle-card">
+                                <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
+                                    <Image url="@../../../Images/bmw-m4.jpg"/>
+                                </ImageView>
+                                <HBox styleClass="vehicle-header">
+                                    <Label text="BMW M4" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <VBox alignment="CENTER_RIGHT">
+                                        <Label text="42,000" styleClass="vehicle-price"/>
+                                        <Label text="per day" styleClass="price-note"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="Sports" styleClass="vehicle-type"/>
+                                <HBox spacing="10" styleClass="vehicle-features">
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/gearshift-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Automatic" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/seat-icon.png"/>
+                                        </ImageView>
+                                        <Label text="5 Seats" styleClass="feature-text"/>
+                                    </HBox>
+                                    <HBox spacing="5" styleClass="feature-item">
+                                        <ImageView fitHeight="15" fitWidth="15">
+                                            <Image url="@../../../Images/ac-icon.png"/>
+                                        </ImageView>
+                                        <Label text="Air Conditioner" styleClass="feature-text"/>
+                                    </HBox>
+                                </HBox>
+                                <Button text="View Details" styleClass="details-button"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </VBox>
+
+                <!-- Blue Accent Bar -->
+                <HBox styleClass="blue-accent-bar">
+                    <padding>
+                        <Insets top="2" right="0" bottom="2" left="0"/>
+                    </padding>
+                </HBox>
+
+                <!-- Brand Logos Section -->
+                <HBox styleClass="brand-logos-section" alignment="CENTER" spacing="50">
+                    <padding>
+                        <Insets top="30" right="20" bottom="30" left="20"/>
+                    </padding>
+
+                    <ImageView fitHeight="40" fitWidth="60" preserveRatio="true">
+                        <Image url="@../../../Images/toyota-logo-2020-europe-download.png"/>
+                    </ImageView>
+                    <ImageView fitHeight="40" fitWidth="60" preserveRatio="true">
+                        <Image url="@../../../Images/ford-logo-2017-download.png"/>
+                    </ImageView>
+                    <ImageView fitHeight="40" fitWidth="60" preserveRatio="true">
+                        <Image url="@../../../Images/Mercedes-Benz-logo-2011-1920x1080.png"/>
+                    </ImageView>
+                    <ImageView fitHeight="40" fitWidth="60" preserveRatio="true">
+                        <Image url="@../../../Images/dodge-logo-2010-download.png"/>
+                    </ImageView>
+                    <ImageView fitHeight="40" fitWidth="60" preserveRatio="true">
+                        <Image url="@../../../Images/porsche-logo-2014-full-download.png"/>
+                    </ImageView>
+                    <ImageView fitHeight="40" fitWidth="60" preserveRatio="true">
+                        <Image url="@../../../Images/audi-logo-2016-download.png"/>
+                    </ImageView>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
