@@ -1,0 +1,187 @@
+
+.main-container {
+    -fx-background-color: white;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.nav-bar {
+    -fx-background-color: white;
+    -fx-padding: 10px 20px;
+}
+
+.logo-image {
+    -fx-padding: 0 5px 0 0;
+}
+
+.logo-text {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555555;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.nav-button:hover {
+    -fx-text-fill: #0066cc;
+}
+
+.nav-button.active {
+    -fx-text-fill: #0066cc;
+    -fx-font-weight: bold;
+}
+
+.help-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #777777;
+}
+
+.phone-number {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+
+
+.content-scroll {
+    -fx-background-color: white;
+    -fx-background: white;
+    -fx-border-color: transparent;
+}
+
+.content-scroll > .viewport {
+    -fx-background-color: white;
+}
+
+.vehicle-selection-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-padding: 0 0 20px 0;
+}
+
+.vehicle-filters {
+    -fx-padding: 15px 0;
+    -fx-border-radius: 5px;
+}
+
+.filter-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555555;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.filter-button:hover {
+    -fx-text-fill: #0077cc;
+}
+
+.filter-button.active {
+    -fx-background-color: #0077cc;
+    -fx-text-fill: white;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 15px;
+}
+
+.dot-separator {
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 14px;
+}
+
+.vehicle-grid-container {
+    -fx-padding: 20px 0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.vehicle-row {
+    -fx-padding: 10px 0;
+}
+
+.vehicle-card {
+    -fx-padding: 15px;
+    -fx-spacing: 10;
+    -fx-max-width: 300px;
+
+}
+
+.vehicle-image {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 24px;
+    -fx-border-radius: 24px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.vehicle-header {
+    -fx-padding: 5px 0;
+    -fx-spacing: 10;
+}
+
+.vehicle-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.vehicle-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0077cc;
+}
+
+.price-note {
+    -fx-font-size: 10px;
+    -fx-text-fill: #777777;
+}
+
+.vehicle-type {
+    -fx-font-size: 12px;
+    -fx-text-fill: #777777;
+    -fx-font-weight: bold;
+}
+
+.vehicle-features {
+    -fx-padding: 10px 0;
+}
+
+.feature-item {
+    -fx-alignment: center;
+}
+
+.feature-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #555555;
+}
+
+.details-button {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-min-width: 100%;
+}
+
+.details-button:hover {
+    -fx-background-color: #555555;
+}
+
+.brand-logos-section {
+    -fx-padding: 30px 20px;
+    -fx-spacing: 50;
+    -fx-alignment: center;
+}
