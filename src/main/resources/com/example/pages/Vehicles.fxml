@@ -37,8 +37,8 @@
                 <HBox spacing="20" alignment="CENTER">
                     <Button text="Home" styleClass="nav-button"/>
                     <Button text="Vehicles" styleClass="nav-button, active"/>
-                    <Button text="Checkout" styleClass="nav-button"/>
-                    <Button text="Contact Us" styleClass="nav-button"/>
+                    <Button text="Details" styleClass="nav-button"/>
+                    <Button text="Chekout" styleClass="nav-button"/>
                 </HBox>
 
                 <!-- Contact Info -->
@@ -92,10 +92,10 @@
                             <!-- Mercedes Mayback Card -->
                             <VBox styleClass="vehicle-card">
                                 <ImageView fitWidth="250" fitHeight="120" styleClass="vehicle-image">
-                                    <Image url="@../../../Images/mercedes-mayback-card.jpg"/>
+                                    <Image url="@../../../Images/s-class.jpg"/>
                                 </ImageView>
                                 <HBox styleClass="vehicle-header">
-                                    <Label text="Mercedes" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+                                    <Label text="Mercedes Mayback" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
                                     <VBox alignment="CENTER_RIGHT">
                                         <Label text="Ksh.24,000" styleClass="vehicle-price"/>
                                         <Label text="per day" styleClass="price-note"/>

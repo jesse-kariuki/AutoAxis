@@ -29,12 +29,13 @@
                 <Label text="AutoAxis" styleClass="logo-text"/>
             </HBox>
 
+
+
             <!-- navigation -->
             <HBox spacing="20" alignment="CENTER">
                 <Button text="Home" styleClass="nav-button, active"/>
                 <Button text="Vehicles" styleClass="nav-button"/>
-                <Button text="Checkout" styleClass="nav-button"/>
-                <Button text="Contact Us" styleClass="nav-button"/>
+                <Button text="Checkout"  styleClass="nav-button"/>
             </HBox>
 
             <!-- contacts -->
