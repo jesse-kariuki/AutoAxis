@@ -21,36 +21,36 @@
     <top>
         <VBox>
             <!-- Logo and Navigation -->
-            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="nav-bar">
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="nav-container">
                 <padding>
                     <Insets top="10" right="20" bottom="10" left="20"/>
                 </padding>
 
-                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
-                    <ImageView fitHeight="30" fitWidth="30" styleClass="logo-image">
-                        <Image url="@../../../Images/car-icon.png"/>
-                    </ImageView>
-                    <Label text="AutoAxis" styleClass="logo-text"/>
-                </HBox>
+<!--                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">-->
+<!--                    <ImageView fitHeight="30" fitWidth="30" styleClass="logo-image">-->
+<!--                        <Image url="@../../../Images/car-icon.png"/>-->
+<!--                    </ImageView>-->
+<!--                    <Label text="AutoAxis" styleClass="logo-text"/>-->
+<!--                </HBox>-->
 
                 <!-- Navigation Links -->
-                <HBox spacing="20" alignment="CENTER">
-                    <Button text="Home" styleClass="nav-button"/>
-                    <Button text="Vehicles" styleClass="nav-button, active"/>
-                    <Button text="Details" styleClass="nav-button"/>
-                    <Button text="Chekout" styleClass="nav-button"/>
-                </HBox>
+<!--                <HBox spacing="20" alignment="CENTER">-->
+<!--                    <Button text="Home" styleClass="nav-button"/>-->
+<!--                    <Button text="Vehicles" styleClass="nav-button, active"/>-->
+<!--                    <Button text="Details" styleClass="nav-button"/>-->
+<!--                    <Button text="Chekout" styleClass="nav-button"/>-->
+<!--                </HBox>-->
 
                 <!-- Contact Info -->
-                <HBox spacing="5" alignment="CENTER_RIGHT">
-                    <ImageView fitHeight="20" fitWidth="20" styleClass="phone-icon">
-                        <Image url="@../../../Images/phone-icon.png"/>
-                    </ImageView>
-                    <VBox>
-                        <Label text="Need help?" styleClass="help-text"/>
-                        <Label text="+254-123-456-789" styleClass="phone-number"/>
-                    </VBox>
-                </HBox>
+<!--                <HBox spacing="5" alignment="CENTER_RIGHT">-->
+<!--                    <ImageView fitHeight="20" fitWidth="20" styleClass="phone-icon">-->
+<!--                        <Image url="@../../../Images/phone-icon.png"/>-->
+<!--                    </ImageView>-->
+<!--                    <VBox>-->
+<!--                        <Label text="Need help?" styleClass="help-text"/>-->
+<!--                        <Label text="+254-123-456-789" styleClass="phone-number"/>-->
+<!--                    </VBox>-->
+<!--                </HBox>-->
             </HBox>
 
             <!-- Blue Accent Bar -->

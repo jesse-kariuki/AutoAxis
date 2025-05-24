@@ -10,7 +10,7 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.autoaxis.controllers.HomepageController"
-            prefHeight="800.0" prefWidth="1000.0" styleClass="main-container">
+            prefHeight="800.0" prefWidth="600.0" styleClass="main-container">
 
     <!-- CSS Styling -->
     <stylesheets>
@@ -19,36 +19,37 @@
 
     <!-- Home, View Cars, Checkout navigation -->
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="nav-bar">
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="nav-container">
             <padding>
                 <Insets top="10" right="20" bottom="10" left="20"/>
             </padding>
 
             <!-- Logo -->
-            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
-                <Label text="AutoAxis" styleClass="logo-text"/>
-            </HBox>
+<!--            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">-->
+<!--                <Label text="AutoAxis" styleClass="logo-text"/>-->
+<!--            </HBox>-->
 
 
 
             <!-- navigation -->
-            <HBox spacing="20" alignment="CENTER">
-                <Button text="Home" styleClass="nav-button, active"/>
-                <Button text="Vehicles" styleClass="nav-button"/>
-                <Button text="Checkout"  styleClass="nav-button"/>
-            </HBox>
+<!--            <HBox spacing="20" alignment="CENTER">-->
+<!--                <Button text="Home" styleClass="nav-button, active"/>-->
+<!--                <Button text="Vehicles" styleClass="nav-button"/>-->
+<!--                <Button text="Details" styleClass="nav-button"/>-->
+<!--                <Button text="Checkout"  styleClass="nav-button"/>-->
+<!--            </HBox>-->
 
             <!-- contacts -->
-            <HBox spacing="5" alignment="CENTER_RIGHT">
-                <ImageView fitHeight="20" fitWidth="20" styleClass="phone-icon">
-                    <Image url="@../../../Images/phone-icon.png"/>
-                </ImageView>
-                <VBox>
-                    <Label text="Need help?" styleClass="help-text"/>
-                    <Label text="+254-123-456-789" styleClass="phone-number"/>
-                </VBox>
+<!--            <HBox spacing="5" alignment="CENTER_RIGHT">-->
+<!--                <ImageView fitHeight="20" fitWidth="20" styleClass="phone-icon">-->
+<!--                    <Image url="@../../../Images/phone-icon.png"/>-->
+<!--                </ImageView>-->
+<!--                <VBox>-->
+<!--                    <Label text="Need help?" styleClass="help-text"/>-->
+<!--                    <Label text="+254-123-456-789" styleClass="phone-number"/>-->
+<!--                </VBox>-->
             </HBox>
-        </HBox>
+
     </top>
 
     <!-- Main Content -->
