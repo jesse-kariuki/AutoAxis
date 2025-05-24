@@ -1,6 +1,4 @@
 package com.example.autoaxis.controllers;
 
-public class HomepageController {
-
-
+public class CarDetailsController {
 }
