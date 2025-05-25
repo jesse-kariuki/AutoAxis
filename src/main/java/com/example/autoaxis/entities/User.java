@@ -40,7 +40,34 @@ public class User {
     public void setPassword(String password) { this.password = password; }
     public void setRole(String role) { this.role = role; }
 
+    /* public boolean saveToDatabase() {
+        String sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, username);
+            stmt.setString(2, email);
+            stmt.setString(3, password);
+            stmt.setString(4, role.toLowerCase());
+
+            int rowsInserted = stmt.executeUpdate();
+            return rowsInserted > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Error saving user: " + e.getMessage());
+            return false;
+        }
+    }  */
+
+
     public boolean saveToDatabase() {
+        // Prevent users from registering as admin
+        if ("admin".equalsIgnoreCase(role)) {
+            System.out.println("You cannot register as an admin.");
+            return false;
+        }
+
         String sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -59,6 +86,7 @@ public class User {
             return false;
         }
     }
+
 
     public static User getUserByEmail(String email) {
         String sql = "SELECT * FROM users WHERE email = ?";
