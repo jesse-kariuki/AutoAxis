@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,13 +26,20 @@ public class MainWindowController implements Initializable {
     @FXML
     private Button checkoutButton;
 
+
+
+
+
     private Button activeButton;
+
+
 
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Initialization logic can be added here if needed
+        AppContext.mainWindowController = this; // Set the main window controller in the AppContext
 
         NavigationManager.getInstance().setRootContainer(rootContainer);
         activeButton = homeButton; // Set the initial active button to homeButton
@@ -46,12 +52,7 @@ public class MainWindowController implements Initializable {
         }
     }
 
-    public  MainWindowController getInstance(){
-        if(this == null){
-            return new MainWindowController();
-        }
-        return this;
-    }
+
 
     @FXML
     private void handleHomeClick(){
@@ -64,7 +65,7 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void handleVehiclesClick() {
+    public void handleVehiclesClick() {
         if (activeButton == vehiclesButton) return;
 
         setActiveButton(vehiclesButton);
@@ -73,12 +74,14 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void handleDetailsClick() {
+    public void handleSClassDetailsClick() {
         if (activeButton == detailsButton) return;
 
         setActiveButton(detailsButton);
         NavigationManager.getInstance().navigateTo("/com/example/pages/CarDetails.fxml",
                 getTransitionDirection(detailsButton));
+
+
     }
 
     @FXML
@@ -92,7 +95,7 @@ public class MainWindowController implements Initializable {
 
 
 
-    private void setActiveButton(Button newActiveButton) {
+    public  void setActiveButton(Button newActiveButton) {
         // Remove active class from current button
         if (activeButton != null) {
             activeButton.getStyleClass().remove("active");
@@ -115,7 +118,7 @@ public class MainWindowController implements Initializable {
                 handleVehiclesClick();
                 break;
             case "details":
-                handleDetailsClick();
+                handleSClassDetailsClick();
                 break;
             case "checkout":
                 handleCheckoutClick();
@@ -124,7 +127,7 @@ public class MainWindowController implements Initializable {
     }
 
 
-    private NavigationManager.TransitionType getTransitionDirection(Button targetButton){
+    public NavigationManager.TransitionType getTransitionDirection(Button targetButton){
 
         int currentIndex = getButtonIndex(activeButton);
         int targetIndex = getButtonIndex(targetButton);
@@ -144,5 +147,48 @@ public class MainWindowController implements Initializable {
         if (button == detailsButton) return 2;
         if (button == checkoutButton) return 3;
         return 0;
+    }
+    public Button getVehiclesButton(){
+        return this.vehiclesButton;
+    }
+
+    public StackPane getRootContainer() {
+        return rootContainer;
+    }
+
+    public void setRootContainer(StackPane rootContainer) {
+        this.rootContainer = rootContainer;
+    }
+
+    public Button getHomeButton() {
+        return homeButton;
+    }
+
+    public void setHomeButton(Button homeButton) {
+        this.homeButton = homeButton;
+    }
+
+    public void setVehiclesButton(Button vehiclesButton) {
+        this.vehiclesButton = vehiclesButton;
+    }
+
+    public Button getDetailsButton() {
+        return detailsButton;
+    }
+
+    public void setDetailsButton(Button detailsButton) {
+        this.detailsButton = detailsButton;
+    }
+
+    public Button getCheckoutButton() {
+        return checkoutButton;
+    }
+
+    public void setCheckoutButton(Button checkoutButton) {
+        this.checkoutButton = checkoutButton;
+    }
+
+    public Button getActiveButton() {
+        return activeButton;
     }
 }
