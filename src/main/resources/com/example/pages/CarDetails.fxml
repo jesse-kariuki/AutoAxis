@@ -8,11 +8,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="main-container" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autoaxis.controllers.CarDetailsController">
 
@@ -66,6 +67,8 @@
             </padding>
 
             <!-- Current Car Details Section -->
+                <StackPane>
+                <StackPane fx:id="sClassPane" prefHeight="150.0" prefWidth="200.0" visible="false">
             <VBox spacing="30" styleClass="current-car-section">
                 <HBox spacing="30" styleClass="car-details-container">
                     <!-- Left section - Car details -->
@@ -92,7 +95,7 @@
                         <Label styleClass="specs-title" text="Technical Specification" />
 
                         <!-- Specifications grid -->
-                        <GridPane fx:id="currentCarSpecs" hgap="15" vgap="15" styleClass="specs-grid">
+                        <GridPane fx:id="currentCarSpecs" hgap="15" styleClass="specs-grid" vgap="15">
                             <columnConstraints>
                                 <ColumnConstraints percentWidth="33.33" />
                                 <ColumnConstraints percentWidth="33.33" />
@@ -102,7 +105,8 @@
                             <!-- Row 1 -->
                             <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
                                 <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
-                                    <!-- Gear icon -->
+                                      <!-- AC icon -->
+                                                <Image url ="@../../../Images/gearshift-icon.png" />
                                 </ImageView>
                                 <Label styleClass="spec-label" text="Gear Box" />
                                 <Label fx:id="specGearBox" styleClass="spec-value" text="Auto" />
@@ -111,6 +115,7 @@
                             <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
                                 <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
                                     <!-- Fuel icon -->
+                                    <Image url ="@../../../Images/fuel-icon.png" />
                                 </ImageView>
                                 <Label styleClass="spec-label" text="Fuel" />
                                 <Label fx:id="specFuel" styleClass="spec-value" text="Petrol" />
@@ -119,6 +124,7 @@
                             <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
                                 <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
                                     <!-- Doors icon -->
+                                    <Image url ="@../../../Images/door-icon.png" />
                                 </ImageView>
                                 <Label styleClass="spec-label" text="Doors" />
                                 <Label fx:id="specDoors" styleClass="spec-value" text="4" />
@@ -127,7 +133,8 @@
                             <!-- Row 2 -->
                             <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
                                 <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
-                                    <!-- AC icon -->
+                                      <!-- AC icon -->
+                                                <Image url ="@../../../Images/ac-icon.png" />
                                 </ImageView>
                                 <Label styleClass="spec-label" text="Air Con" />
                                 <Label fx:id="specAirConditioner" styleClass="spec-value" text="Yes" />
@@ -136,6 +143,7 @@
                             <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
                                     <!-- Seats icon -->
+                                    <Image url ="@../../../Images/seat-icon.png" />
                                 </ImageView>
                                 <Label styleClass="spec-label" text="Seats" />
                                 <Label fx:id="specSeats" styleClass="spec-value" text="5" />
@@ -144,17 +152,22 @@
                             <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
                                     <!-- Distance icon -->
+                                    <Image url ="@../../../Images/distance-icon.png" />
                                 </ImageView>
                                 <Label styleClass="spec-label" text="Distance" />
                                 <Label fx:id="specDistance" styleClass="spec-value" text="Unlimited" />
                             </VBox>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
                         </GridPane>
 
                         <!-- Car Equipment section -->
                         <VBox spacing="15" styleClass="equipment-section">
                             <Label styleClass="equipment-title" text="Car Equipment" />
 
-                            <GridPane fx:id="currentCarEquipment" hgap="20" vgap="10" styleClass="equipment-grid">
+                            <GridPane fx:id="currentCarEquipment" hgap="20" styleClass="equipment-grid" vgap="10">
                                 <columnConstraints>
                                     <ColumnConstraints percentWidth="50" />
                                     <ColumnConstraints percentWidth="50" />
@@ -162,15 +175,15 @@
 
                                 <!-- Left column -->
                                 <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                                    <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
                                         <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
                                         <Label styleClass="equipment-item" text="ABS" />
                                     </HBox>
-                                    <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
                                         <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
                                         <Label styleClass="equipment-item" text="Air Bags" />
                                     </HBox>
-                                    <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
                                         <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
                                         <Label styleClass="equipment-item" text="Cruise Control" />
                                     </HBox>
@@ -178,38 +191,922 @@
 
                                 <!-- Right column -->
                                 <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                                    <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
                                         <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
                                         <Label styleClass="equipment-item" text="ESP" />
                                     </HBox>
-                                    <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
                                         <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
                                         <Label styleClass="equipment-item" text="Bluetooth" />
                                     </HBox>
-                                    <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
                                         <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
                                         <Label styleClass="equipment-item" text="Air Conditioner" />
                                     </HBox>
                                 </VBox>
+                              <rowConstraints>
+                                 <RowConstraints />
+                              </rowConstraints>
                             </GridPane>
                         </VBox>
                     </VBox>
                 </HBox>
             </VBox>
+                </StackPane>
+                    <StackPane fx:id="maybackPane" prefHeight="150.0" prefWidth="200.0">
+                        <VBox spacing="30" styleClass="current-car-section">
+                            <HBox spacing="30" styleClass="car-details-container">
+                                <!-- Left section - Car details -->
+                                <VBox spacing="20" styleClass="car-details-section" HBox.hgrow="ALWAYS">
+                                    <!-- Car brand and price -->
+                                    <VBox spacing="5">
+                                        <Label styleClass="car-brand" text="Mercedes Mayback" />
+                                        <HBox alignment="BASELINE_LEFT" spacing="5">
+                                            <Label styleClass="car-price" text="Ksh.24,000" />
+                                            <Label styleClass="price-period" text="/ day" />
+                                        </HBox>
+                                    </VBox>
 
+                                    <!-- Car image placeholder -->
+                                    <VBox styleClass="car-image-container">
+                                        <ImageView fitHeight="200" fitWidth="350" preserveRatio="true" styleClass="car-image">
+                                            <Image url="@../../../Images/mercedes-mayback-card.jpg" />
+                                        </ImageView>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Right section - Technical specifications -->
+                                <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="specs-title" text="Technical Specification" />
+
+                                    <!-- Specifications grid -->
+                                    <GridPane hgap="15" styleClass="specs-grid" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                        </columnConstraints>
+
+                                        <!-- Row 1 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Gear icon -->
+                                                <Image url = "@../../../Images/gearshift-icon.png"/>
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Gear Box" />
+                                            <Label styleClass="spec-value" text="Manual" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Fuel icon -->
+                                                <Image url ="@../../../Images/fuel-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Fuel" />
+                                            <Label styleClass="spec-value" text="Petrol" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Doors icon -->
+                                                <Image url ="@../../../Images/door-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Doors" />
+                                            <Label styleClass="spec-value" text="4" />
+                                        </VBox>
+
+                                        <!-- Row 2 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- AC icon -->
+                                                <Image url ="@../../../Images/ac-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Air Con" />
+                                            <Label styleClass="spec-value" text="Yes" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                    <!-- Seat icon -->
+                                                <Image url ="@../../../Images/seat-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Seats" />
+                                            <Label styleClass="spec-value" text="5" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Distance icon -->
+                                                <Image url ="@../../../Images/distance-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Distance" />
+                                            <Label styleClass="spec-value" text="Unlimited" />
+                                        </VBox>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+
+                                    <!-- Car Equipment section -->
+                                    <VBox spacing="15" styleClass="equipment-section">
+                                        <Label styleClass="equipment-title" text="Car Equipment" />
+
+                                        <GridPane hgap="20" styleClass="equipment-grid" vgap="10">
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="50" />
+                                                <ColumnConstraints percentWidth="50" />
+                                            </columnConstraints>
+
+                                            <!-- Left column -->
+                                            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ABS" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Bags" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Cruise Control" />
+                                                </HBox>
+                                            </VBox>
+
+                                            <!-- Right column -->
+                                            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ESP" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Bluetooth" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Conditioner" />
+                                                </HBox>
+                                            </VBox>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                    </StackPane>
+
+                    <StackPane fx:id="glePane" prefHeight="150.0" prefWidth="200.0">
+                        <VBox spacing="30" styleClass="current-car-section">
+                            <HBox spacing="30" styleClass="car-details-container">
+                                <!-- Left section - Car details -->
+                                <VBox spacing="20" styleClass="car-details-section" HBox.hgrow="ALWAYS">
+                                    <!-- Car brand and price -->
+                                    <VBox spacing="5">
+                                        <Label styleClass="car-brand" text="Mercedes GLE" />
+                                        <HBox alignment="BASELINE_LEFT" spacing="5">
+                                            <Label styleClass="car-price" text="Ksh.44,000" />
+                                            <Label styleClass="price-period" text="/ day" />
+                                        </HBox>
+                                    </VBox>
+
+                                    <!-- Car image placeholder -->
+                                    <VBox styleClass="car-image-container">
+                                        <ImageView fitHeight="200" fitWidth="350" preserveRatio="true" styleClass="car-image">
+                                            <Image url="@../../../Images/mercede-gle.jpg" />
+                                        </ImageView>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Right section - Technical specifications -->
+                                <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="specs-title" text="Technical Specification" />
+
+                                    <!-- Specifications grid -->
+                                    <GridPane hgap="15" styleClass="specs-grid" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                        </columnConstraints>
+
+                                        <!-- Row 1 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Gear icon -->
+                                                    <Image url = "@../../../Images/gearshift-icon.png"/>
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Gear Box" />
+                                            <Label styleClass="spec-value" text="Manual" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Fuel icon -->
+                                                <Image url ="@../../../Images/fuel-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Fuel" />
+                                            <Label styleClass="spec-value" text="Petrol" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Doors icon -->
+                                                <Image url ="@../../../Images/door-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Doors" />
+                                            <Label styleClass="spec-value" text="4" />
+                                        </VBox>
+
+                                        <!-- Row 2 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- AC icon -->
+                                                <Image url ="@../../../Images/ac-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Air Con" />
+                                            <Label styleClass="spec-value" text="Yes" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                    <!-- seat icon -->
+                                                <Image url ="@../../../Images/seat-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Seats" />
+                                            <Label styleClass="spec-value" text="5" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Distance icon -->
+                                                <Image url ="@../../../Images/distance-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Distance" />
+                                            <Label styleClass="spec-value" text="Unlimited" />
+                                        </VBox>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+
+                                    <!-- Car Equipment section -->
+                                    <VBox spacing="15" styleClass="equipment-section">
+                                        <Label styleClass="equipment-title" text="Car Equipment" />
+
+                                        <GridPane hgap="20" styleClass="equipment-grid" vgap="10">
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="50" />
+                                                <ColumnConstraints percentWidth="50" />
+                                            </columnConstraints>
+
+                                            <!-- Left column -->
+                                            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ABS" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Bags" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Cruise Control" />
+                                                </HBox>
+                                            </VBox>
+
+                                            <!-- Right column -->
+                                            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ESP" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Bluetooth" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Conditioner" />
+                                                </HBox>
+                                            </VBox>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                    </StackPane>
+                    <StackPane fx:id="nineOneOnePane" prefHeight="150.0" prefWidth="200.0">
+                        <VBox spacing="30" styleClass="current-car-section">
+                            <HBox spacing="30" styleClass="car-details-container">
+                                <!-- Left section - Car details -->
+                                <VBox spacing="20" styleClass="car-details-section" HBox.hgrow="ALWAYS">
+                                    <!-- Car brand and price -->
+                                    <VBox spacing="5">
+                                        <Label styleClass="car-brand" text="Porsche 911" />
+                                        <HBox alignment="BASELINE_LEFT" spacing="5">
+                                            <Label styleClass="car-price" text="Ksh.39,000" />
+                                            <Label styleClass="price-period" text="/ day" />
+                                        </HBox>
+                                    </VBox>
+
+                                    <!-- Car image placeholder -->
+                                    <VBox styleClass="car-image-container">
+                                        <ImageView fitHeight="200" fitWidth="350" preserveRatio="true" styleClass="car-image">
+                                            <Image url="@../../../Images/porsche-sports.jpg" />
+                                        </ImageView>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Right section - Technical specifications -->
+                                <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="specs-title" text="Technical Specification" />
+
+                                    <!-- Specifications grid -->
+                                    <GridPane hgap="15" styleClass="specs-grid" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                        </columnConstraints>
+
+                                        <!-- Row 1 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Gear icon -->
+                                                        <Image url = "@../../../Images/gearshift-icon.png"/>
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Gear Box" />
+                                            <Label styleClass="spec-value" text="Manual" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Fuel icon -->
+                                                <Image url ="@../../../Images/fuel-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Fuel" />
+                                            <Label styleClass="spec-value" text="Petrol" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Doors icon -->
+                                                <Image url ="@../../../Images/door-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Doors" />
+                                            <Label styleClass="spec-value" text="4" />
+                                        </VBox>
+
+                                        <!-- Row 2 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- AC icon -->
+                                                <Image url ="@../../../Images/ac-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Air Con" />
+                                            <Label styleClass="spec-value" text="Yes" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                    <!-- AC icon -->
+                                                <Image url ="@../../../Images/seat-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Seats" />
+                                            <Label styleClass="spec-value" text="5" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Distance icon -->
+                                                <Image url ="@../../../Images/distance-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Distance" />
+                                            <Label styleClass="spec-value" text="Unlimited" />
+                                        </VBox>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+
+                                    <!-- Car Equipment section -->
+                                    <VBox spacing="15" styleClass="equipment-section">
+                                        <Label styleClass="equipment-title" text="Car Equipment" />
+
+                                        <GridPane hgap="20" styleClass="equipment-grid" vgap="10">
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="50" />
+                                                <ColumnConstraints percentWidth="50" />
+                                            </columnConstraints>
+
+                                            <!-- Left column -->
+                                            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ABS" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Bags" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Cruise Control" />
+                                                </HBox>
+                                            </VBox>
+
+                                            <!-- Right column -->
+                                            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ESP" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Bluetooth" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Conditioner" />
+                                                </HBox>
+                                            </VBox>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                    </StackPane>
+                    <StackPane fx:id="crownPane" prefHeight="150.0" prefWidth="200.0">
+                        <VBox spacing="30" styleClass="current-car-section">
+                            <HBox spacing="30" styleClass="car-details-container">
+                                <!-- Left section - Car details -->
+                                <VBox spacing="20" styleClass="car-details-section" HBox.hgrow="ALWAYS">
+                                    <!-- Car brand and price -->
+                                    <VBox spacing="5">
+                                        <Label styleClass="car-brand" text="Toyota Crown" />
+                                        <HBox alignment="BASELINE_LEFT" spacing="5">
+                                            <Label styleClass="car-price" text="Ksh.35,000" />
+                                            <Label styleClass="price-period" text="/ day" />
+                                        </HBox>
+                                    </VBox>
+
+                                    <!-- Car image placeholder -->
+                                    <VBox styleClass="car-image-container">
+                                        <ImageView fitHeight="200" fitWidth="350" preserveRatio="true" styleClass="car-image">
+                                            <Image url="@../../../Images/toyota-crown.jpg" />
+                                        </ImageView>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Right section - Technical specifications -->
+                                <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="specs-title" text="Technical Specification" />
+
+                                    <!-- Specifications grid -->
+                                    <GridPane hgap="15" styleClass="specs-grid" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                        </columnConstraints>
+
+                                        <!-- Row 1 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Gear icon -->
+                                                        <Image url = "@../../../Images/gearshift-icon.png"/>
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Gear Box" />
+                                            <Label styleClass="spec-value" text="Manual" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Fuel icon -->
+                                                <Image url ="@../../../Images/fuel-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Fuel" />
+                                            <Label styleClass="spec-value" text="Petrol" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Doors icon -->
+                                                <Image url ="@../../../Images/door-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Doors" />
+                                            <Label styleClass="spec-value" text="4" />
+                                        </VBox>
+
+                                        <!-- Row 2 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- AC icon -->
+                                                <Image url ="@../../../Images/ac-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Air Con" />
+                                            <Label styleClass="spec-value" text="Yes" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                    <!-- AC icon -->
+                                                <Image url ="@../../../Images/seat-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Seats" />
+                                            <Label styleClass="spec-value" text="5" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Distance icon -->
+                                                <Image url ="@../../../Images/distance-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Distance" />
+                                            <Label styleClass="spec-value" text="Unlimited" />
+                                        </VBox>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+
+                                    <!-- Car Equipment section -->
+                                    <VBox spacing="15" styleClass="equipment-section">
+                                        <Label styleClass="equipment-title" text="Car Equipment" />
+
+                                        <GridPane hgap="20" styleClass="equipment-grid" vgap="10">
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="50" />
+                                                <ColumnConstraints percentWidth="50" />
+                                            </columnConstraints>
+
+                                            <!-- Left column -->
+                                            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ABS" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Bags" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Cruise Control" />
+                                                </HBox>
+                                            </VBox>
+
+                                            <!-- Right column -->
+                                            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ESP" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Bluetooth" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Conditioner" />
+                                                </HBox>
+                                            </VBox>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                    </StackPane>
+                    <StackPane fx:id="landcruiserPane" prefHeight="150.0" prefWidth="200.0">
+                        <VBox spacing="30" styleClass="current-car-section">
+                            <HBox spacing="30" styleClass="car-details-container">
+                                <!-- Left section - Car details -->
+                                <VBox spacing="20" styleClass="car-details-section" HBox.hgrow="ALWAYS">
+                                    <!-- Car brand and price -->
+                                    <VBox spacing="5">
+                                        <Label styleClass="car-brand" text="Landcruiser" />
+                                        <HBox alignment="BASELINE_LEFT" spacing="5">
+                                            <Label styleClass="car-price" text="Ksh.50,000" />
+                                            <Label styleClass="price-period" text="/ day" />
+                                        </HBox>
+                                    </VBox>
+
+                                    <!-- Car image placeholder -->
+                                    <VBox styleClass="car-image-container">
+                                        <ImageView fitHeight="200" fitWidth="350" preserveRatio="true" styleClass="car-image">
+                                            <Image url="@../../../Images/toyota-landcruiser.jpg" />
+                                        </ImageView>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Right section - Technical specifications -->
+                                <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="specs-title" text="Technical Specification" />
+
+                                    <!-- Specifications grid -->
+                                    <GridPane hgap="15" styleClass="specs-grid" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                        </columnConstraints>
+
+                                        <!-- Row 1 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Gear icon -->
+                                                        <Image url = "@../../../Images/gearshift-icon.png"/>
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Gear Box" />
+                                            <Label styleClass="spec-value" text="Manual" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Fuel icon -->
+                                                <Image url ="@../../../Images/fuel-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Fuel" />
+                                            <Label styleClass="spec-value" text="Petrol" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                  <!-- Doors icon -->
+                                                <Image url ="@../../../Images/door-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Doors" />
+                                            <Label styleClass="spec-value" text="4" />
+                                        </VBox>
+
+                                        <!-- Row 2 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- AC icon -->
+                                                <Image url ="@../../../Images/ac-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Air Con" />
+                                            <Label styleClass="spec-value" text="Yes" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                    <!-- AC icon -->
+                                                <Image url ="@../../../Images/seat-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Seats" />
+                                            <Label styleClass="spec-value" text="5" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Distance icon -->
+                                                <Image url ="@../../../Images/distance-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Distance" />
+                                            <Label styleClass="spec-value" text="Unlimited" />
+                                        </VBox>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+
+                                    <!-- Car Equipment section -->
+                                    <VBox spacing="15" styleClass="equipment-section">
+                                        <Label styleClass="equipment-title" text="Car Equipment" />
+
+                                        <GridPane hgap="20" styleClass="equipment-grid" vgap="10">
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="50" />
+                                                <ColumnConstraints percentWidth="50" />
+                                            </columnConstraints>
+
+                                            <!-- Left column -->
+                                            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ABS" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Bags" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Cruise Control" />
+                                                </HBox>
+                                            </VBox>
+
+                                            <!-- Right column -->
+                                            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ESP" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Bluetooth" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Conditioner" />
+                                                </HBox>
+                                            </VBox>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                    </StackPane>
+                    <StackPane fx:id="cayennePane" prefHeight="150.0" prefWidth="200.0">
+                        <VBox spacing="30" styleClass="current-car-section">
+                            <HBox spacing="30" styleClass="car-details-container">
+                                <!-- Left section - Car details -->
+                                <VBox spacing="20" styleClass="car-details-section" HBox.hgrow="ALWAYS">
+                                    <!-- Car brand and price -->
+                                    <VBox spacing="5">
+                                        <Label styleClass="car-brand" text="Porsche Cayenne" />
+                                        <HBox alignment="BASELINE_LEFT" spacing="5">
+                                            <Label styleClass="car-price" text="Ksh.24,000" />
+                                            <Label styleClass="price-period" text="/ day" />
+                                        </HBox>
+                                    </VBox>
+
+                                    <!-- Car image placeholder -->
+                                    <VBox styleClass="car-image-container">
+                                        <ImageView fitHeight="200" fitWidth="350" preserveRatio="true" styleClass="car-image">
+                                            <Image url="@../../../Images/porsche-suv.jpg" />
+                                        </ImageView>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Right section - Technical specifications -->
+                                <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="specs-title" text="Technical Specification" />
+
+                                    <!-- Specifications grid -->
+                                    <GridPane hgap="15" styleClass="specs-grid" vgap="15">
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                            <ColumnConstraints percentWidth="33.33" />
+                                        </columnConstraints>
+
+                                        <!-- Row 1 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Gear icon -->
+                                                <Image url="@../../../Images/gearshift-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Gear Box" />
+                                            <Label styleClass="spec-value" text="Manual" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Fuel icon -->
+                                                <Image url="@../../../Images/fuel-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Fuel" />
+                                            <Label styleClass="spec-value" text="Petrol" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Doors icon -->
+                                                <Image url="@../../../Images/door-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Doors" />
+                                            <Label styleClass="spec-value" text="4" />
+                                        </VBox>
+
+                                        <!-- Row 2 -->
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- AC icon -->
+                                                <Image url="@../../../Images/ac-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Air Con" />
+                                            <Label styleClass="spec-value" text="Yes" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Seats icon -->
+                                                <Image url="@../../../Images/seat-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Seats" />
+                                            <Label styleClass="spec-value" text="5" />
+                                        </VBox>
+
+                                        <VBox styleClass="spec-item" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <ImageView fitHeight="30" fitWidth="30" styleClass="spec-icon">
+                                                <!-- Distance icon -->
+                                                <Image url ="@../../../Images/distance-icon.png" />
+                                            </ImageView>
+                                            <Label styleClass="spec-label" text="Distance" />
+                                            <Label styleClass="spec-value" text="Unlimited" />
+                                        </VBox>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+
+                                    <!-- Car Equipment section -->
+                                    <VBox spacing="15" styleClass="equipment-section">
+                                        <Label styleClass="equipment-title" text="Car Equipment" />
+
+                                        <GridPane hgap="20" styleClass="equipment-grid" vgap="10">
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="50" />
+                                                <ColumnConstraints percentWidth="50" />
+                                            </columnConstraints>
+
+                                            <!-- Left column -->
+                                            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ABS" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Bags" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Cruise Control" />
+                                                </HBox>
+                                            </VBox>
+
+                                            <!-- Right column -->
+                                            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="ESP" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Bluetooth" />
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                                    <ImageView fitHeight="15" fitWidth="15" styleClass="check-icon" />
+                                                    <Label styleClass="equipment-item" text="Air Conditioner" />
+                                                </HBox>
+                                            </VBox>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                    </StackPane>
+
+                </StackPane>
+
+                
             <!-- Other cars section -->
             <VBox spacing="20" styleClass="other-cars-section">
                 <padding>
-                    <Insets left="30" right="30" bottom="30" />
+                    <Insets bottom="30" left="30" right="30" />
                 </padding>
 
                 <HBox alignment="CENTER_LEFT" spacing="20">
                     <Label styleClass="other-cars-title" text="Other cars" />
-                    <Button styleClass="view-all-button" text="View All →" />
+                    <Button fx:id="viewAllBtn" onAction="#handleViewAll" styleClass="view-all-button" text="View All →" />
                 </HBox>
 
                 <!-- Cars grid -->
-                <GridPane fx:id="otherCarsGrid" hgap="20" vgap="20" styleClass="other-cars-grid">
+                <GridPane fx:id="otherCarsGrid" hgap="20" styleClass="other-cars-grid" vgap="20">
                     <columnConstraints>
                         <ColumnConstraints percentWidth="33.33" />
                         <ColumnConstraints percentWidth="33.33" />
@@ -229,22 +1126,22 @@
                             <Label styleClass="car-card-period" text="/ day" />
 
                             <!-- Car specs row -->
-                            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="car-card-specs">
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="car-card-specs">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Automatic" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Petrol" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Air Conditioner" />
                                 </HBox>
                             </HBox>
 
-                            <Button styleClass="view-details-button" text="View Details" />
+                            <Button onAction="#showMayback" styleClass="view-details-button" text="View Details" />
                         </VBox>
                     </VBox>
 
@@ -261,22 +1158,22 @@
                             <Label styleClass="car-card-period" text="/ day" />
 
                             <!-- Car specs row -->
-                            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="car-card-specs">
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="car-card-specs">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Automatic" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Petrol" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Air Conditioner" />
                                 </HBox>
                             </HBox>
 
-                            <Button styleClass="view-details-button" text="View Details" />
+                            <Button styleClass="view-details-button" text="View Details" onAction="#showGle"/>
                         </VBox>
                     </VBox>
 
@@ -293,22 +1190,22 @@
                             <Label styleClass="car-card-period" text="/ day" />
 
                             <!-- Car specs row -->
-                            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="car-card-specs">
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="car-card-specs">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Automatic" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Petrol" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Air Conditioner" />
                                 </HBox>
                             </HBox>
 
-                            <Button styleClass="view-details-button" text="View Details" />
+                            <Button styleClass="view-details-button" text="View Details" onAction="#showNineOneOne"/>
                         </VBox>
                     </VBox>
 
@@ -326,22 +1223,22 @@
                             <Label styleClass="car-card-period" text="/ day" />
 
                             <!-- Car specs row -->
-                            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="car-card-specs">
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="car-card-specs">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Automatic" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Petrol" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Air Conditioner" />
                                 </HBox>
                             </HBox>
 
-                            <Button styleClass="view-details-button" text="View Details" />
+                            <Button styleClass="view-details-button" text="View Details" onAction="#showCrown"/>
                         </VBox>
                     </VBox>
 
@@ -358,22 +1255,22 @@
                             <Label styleClass="car-card-period" text="/ day" />
 
                             <!-- Car specs row -->
-                            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="car-card-specs">
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="car-card-specs">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Automatic" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Petrol" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Air Conditioner" />
                                 </HBox>
                             </HBox>
 
-                            <Button styleClass="view-details-button" text="View Details" />
+                            <Button styleClass="view-details-button" text="View Details" onAction="#showCayenne"/>
                         </VBox>
                     </VBox>
 
@@ -390,24 +1287,28 @@
                             <Label styleClass="car-card-period" text="/ day" />
 
                             <!-- Car specs row -->
-                            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="car-card-specs">
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="car-card-specs">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Automatic" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Petrol" />
                                 </HBox>
-                                <HBox spacing="3" alignment="CENTER_LEFT">
+                                <HBox alignment="CENTER_LEFT" spacing="3">
                                     <ImageView fitHeight="12" fitWidth="12" styleClass="mini-spec-icon" />
                                     <Label styleClass="mini-spec-text" text="Air Conditioner" />
                                 </HBox>
                             </HBox>
 
-                            <Button styleClass="view-details-button" text="View Details" />
+                            <Button styleClass="view-details-button" text="View Details" onAction="#showLandcruiser"/>
                         </VBox>
                     </VBox>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
                 </GridPane>
             </VBox>
             </VBox>

@@ -148,7 +148,7 @@
 
                     <HBox alignment="CENTER_LEFT">
                         <Label text="Choose the car that suits you" styleClass="section-title" HBox.hgrow="ALWAYS"/>
-                        <Button text="View All" styleClass="view-all-button"/>
+                        <Button text="View All" styleClass="view-all-button" onAction="#showAllVehicles"/>
                     </HBox>
                     <HBox spacing="15" alignment="CENTER">
                         <VBox spacing="10" styleClass="car-card" HBox.hgrow="ALWAYS">
@@ -180,7 +180,7 @@
                                     <Label text="Air Conditioner" styleClass="feature-text"/>
                                 </HBox>
                             </HBox>
-                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity"/>
+                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity" onAction="#handleMaybackDetails"/>
                         </VBox>
 
                         <!-- Mercedes S-class Car Card -->
@@ -213,7 +213,7 @@
                                     <Label text="Air Conditioner" styleClass="feature-text"/>
                                 </HBox>
                             </HBox>
-                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity"/>
+                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity" onAction="#handleSClassDetails"/>
                         </VBox>
 
                         <!-- Mercedes GLE Car Card -->
@@ -246,7 +246,7 @@
                                     <Label text="Air Conditioner" styleClass="feature-text"/>
                                 </HBox>
                             </HBox>
-                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity"/>
+                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity" onAction="#showGLE"/>
                         </VBox>
                     </HBox>
 
@@ -282,7 +282,7 @@
                                     <Label text="Air Conditioner" styleClass="feature-text"/>
                                 </HBox>
                             </HBox>
-                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity"/>
+                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity" onAction="#showNineOneOne"/>
                         </VBox>
 
                         <!-- Toyota Crown Car Card -->
@@ -315,7 +315,7 @@
                                     <Label text="Air Conditioner" styleClass="feature-text"/>
                                 </HBox>
                             </HBox>
-                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity"/>
+                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity" onAction="#showCrown"/>
                         </VBox>
 
                         <!-- Porsche Cayenne Car Card -->
@@ -348,7 +348,7 @@
                                     <Label text="Air Conditioner" styleClass="feature-text"/>
                                 </HBox>
                             </HBox>
-                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity"/>
+                            <Button text="View Details" styleClass="details-button" maxWidth="Infinity" onAction="#showCayenne"/>
                         </VBox>
                     </HBox>
                 </VBox>
