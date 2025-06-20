@@ -1,0 +1,115 @@
+/* Navigation Container */
+.nav-container {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 0;
+    -fx-border-color: #34495e;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+.main-container {
+
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-padding: 15 25 15 25;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 3 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-min-width: 120px;
+    -fx-alignment: center;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-button:hover {
+    -fx-background-color: #34495e;
+    -fx-text-fill: #ecf0f1;
+    -fx-border-color: #3498db;
+}
+
+/* Active State */
+.nav-button.active {
+    -fx-background-color: #34495e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #3498db;
+    -fx-font-weight: 600;
+}
+
+/* Active Hover State */
+.nav-button.active:hover {
+    -fx-background-color: #34495e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #2980b9;
+}
+
+/* Pressed Effect */
+.nav-button:pressed {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #ffffff;
+}
+
+/* Disabled State (for workflow validation) */
+.nav-button:disabled {
+    -fx-opacity: 0.5;
+    -fx-text-fill: #7f8c8d;
+    -fx-cursor: default;
+}
+
+/* Alternative Modern Style */
+.nav-button-modern {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+    -fx-padding: 12 20 12 20;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-radius: 0;
+}
+
+.nav-button-modern:hover {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #495057;
+    -fx-border-color: #dee2e6;
+}
+
+.nav-button-modern.active {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #007bff;
+    -fx-border-color: #007bff;
+    -fx-font-weight: 500;
+}
+
+/* Progress Indicator Style (Optional) */
+.nav-progress {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 2 0 0 0;
+}
+
+.nav-progress .progress-bar > .bar {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 0;
+}
+
+/* Breadcrumb Style Alternative */
+.nav-breadcrumb {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}
+
+.breadcrumb-separator {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 12px;
+}
