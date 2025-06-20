@@ -6,13 +6,474 @@
 }
 .button{
     -fx-background-color: #fff;
+    -fx-border-color:black;
 }
 
+.button:hover{
+    -fx-cursor:hand;
+}
 .button:focused {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
+.sign_up {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 14px;
+    -fx-fill: #333333;
+    -fx-text-alignment: center;
+}
+
+.terms-text {
+    -fx-font-family: "Poppins Regular";
+    -fx-font-size: 10px;
+    -fx-fill: #999999;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-line-spacing: 1.2;
+}
+
+
+.auth-button {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 45px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 5px;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0.2, 0, 1);
+    -fx-transition: all 0.2s ease;
+}
+
+.create-account-anchor{
+    -fx-background-image: url("Images/landrover.jpg");
+}
+.root {
+    -primary-color: #4f46e5;
+    -primary-hover: #4338ca;
+    -text-primary: #1e293b;
+    -text-secondary: #64748b;
+    -border-color: #e2e8f0;
+    -bg-color: #f8fafc;
+}
+
+/* Title Text */
+.title-text {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 24px;
+    -fx-fill: -text-primary;
+}
+
+/* Form Container */
+.form-container {
+    -fx-padding: 0 20px;
+    -fx-max-width: 320px;
+}
+
+/* Input Fields */
+.input-label {
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 14px;
+    -fx-text-fill: -text-primary;
+}
+
+.modern-input {
+    -fx-font-family: "Poppins Regular";
+    -fx-font-size: 14px;
+    -fx-pref-height: 44px;
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-padding: 0 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.02), 0, 1, 0, 1);
+}
+
+.modern-input:focused {
+    -fx-border-color: -primary-color;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.1), 0, 4, 0, 2);
+}
+
+/* Primary Button */
+.primary-button {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-background-color: -primary-color;
+    -fx-background-radius: 8px;
+    -fx-pref-height: 44px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.2), 0, 4, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: -primary-hover;
+}
+
+.primary-button:pressed {
+    -fx-translate-y: 1px;
+}
 
 
 
+
+/* Divider */
+.divider {
+    -fx-padding: 0;
+}
+
+.divider-text {
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -text-secondary;
+}
+
+/* Footer Link */
+.footer-link {
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 14px;
+    -fx-text-fill: -text-secondary;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+.footer-link:hover {
+    -fx-text-fill: -primary-color;
+}
+
+/* Hint Text */
+.hint-text {
+    -fx-font-family: "Poppins Regular";
+    -fx-font-size: 12px;
+    -fx-text-fill: -text-secondary;
+}
+
+.info-icon {
+    -fx-opacity: 0.6;
+}
+
+/* styles.css for AutoAxis application */
+
+/* Main background */
+.background-pane {
+    -fx-background-color: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+}
+
+/* Brand panel styling (left side) */
+.brand-panel {
+    -fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);
+    -fx-background-radius: 15px;
+    -fx-padding: 20px;
+}
+
+/* Form panel styling (right side) */
+.form-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-padding: 30px;
+}
+
+/* Header text styling */
+.header-text {
+    -fx-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* Label styling */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* Hint text styling */
+.hint-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+}
+
+/* Text field styling */
+.text-field, .password-field {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 12px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #1f618d;
+}
+
+/* Hyperlink styling */
+.hyperlink {
+    -fx-text-fill: #3498db;
+    -fx-border-color: transparent;
+    -fx-underline: true;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #2980b9;
+}
+
+/* Error message styling */
+.error-text {
+    -fx-fill: #e74c3c;
+    -fx-font-size: 12px;
+}
+
+/* STYLING FOR THE CREATE ACCOUNT FORM */
+
+/* Main background */
+.background-pane {
+    -fx-background-color: white;
+}
+
+/* Profile circle */
+.profile-circle {
+    -fx-fill: #e0e0e0;
+}
+
+/* Form container */
+.form-container {
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 30px;
+}
+
+/* Header text */
+.header-text {
+    -fx-font-family: 'System';
+    -fx-font-size: 24px;
+    -fx-font-weight: normal;
+    -fx-fill: #212121;
+}
+
+/* Subheader text */
+.subheader-text {
+    -fx-font-family: 'System';
+    -fx-font-size: 12px;
+    -fx-fill: #757575;
+    -fx-text-alignment: center;
+}
+
+/* Login text and link to login instead*/
+.login-text {
+    -fx-font-family: 'System';
+    -fx-font-size: 12px;
+    -fx-text-fill: #757575;
+}
+
+.login-link {
+    -fx-font-family: 'System';
+    -fx-font-size: 12px;
+    -fx-text-fill: #212121;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+    -fx-font-weight: bold;
+}
+
+.login-link:hover {
+    -fx-underline: true;
+}
+
+/* Field labels */
+.field-label {
+    -fx-font-family: 'System';
+    -fx-font-size: 12px;
+    -fx-text-fill: #757575;
+    -fx-font-weight: normal;
+}
+
+/* Input fields */
+.input-field {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-pref-height: 40px;
+}
+
+.input-field:focused {
+    -fx-border-color: #212121;
+}
+
+/* Sign-up button */
+.signup-button {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+    -fx-font-weight: normal;
+    -fx-font-size: 14px;
+    -fx-padding: 12px;
+    -fx-pref-width: 300px;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+    -fx-border-radius: 25px;
+}
+
+.signup-button:hover {
+    -fx-background-color: #424242;
+}
+
+.signup-button:pressed {
+    -fx-background-color: black;
+}
+
+/* Terms text */
+.terms-text {
+    -fx-font-family: 'System';
+    -fx-font-size: 11px;
+    -fx-fill: #757575;
+    -fx-text-alignment: center;
+}
+
+
+/* THIS IS THE STYLE FOR THE LOGIN PAGE*/
+
+
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: white;
+}
+
+
+.language-selector {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+
+.sign-up-button {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+}
+
+.sign-up-button:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Image container styling */
+.image-container {
+    -fx-background-color: #f0f0f0;
+}
+
+.car-image {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+
+.login-form-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+
+.logo-container {
+    -fx-padding: 10px;
+}
+
+.logo-circle {
+    -fx-fill: #d9d9d9;
+}
+
+
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+
+.quote-text {
+    -fx-font-style: italic;
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+.quote-translation {
+    -fx-font-style: italic;
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+
+.field-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+}
+
+.login-field {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+    -fx-padding: 10px;
+    -fx-pref-height: 40px;
+}
+
+.login-field:focused {
+    -fx-border-color: #666666;
+}
+
+.hide-password-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #999999;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.terms-checkbox {
+    -fx-border-color: #cccccc;
+}
+
+.terms-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+}
+
+.login-button {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 25px;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-background-radius: 25px;
+
+}
+
+.login-button:hover {
+    -fx-background-color: #b3b3b3;
+}

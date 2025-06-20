@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.autoaxis.controllers.LoginPageController"
+            prefHeight="600.0" prefWidth="900.0">
+    <stylesheets>
+        <URL value="@../../../styles.css" />
+    </stylesheets>
+
+    <children>
+        <!-- Language Selector (Top Left) -->
+        <ComboBox prefWidth="150.0" promptText="English (United States)" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" styleClass="language-selector"/>
+
+        <!-- No Account and Sign Up Elements (Top Right) -->
+        <HBox spacing="10.0" alignment="CENTER" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <Label text="No Account?" styleClass="secondary-text"/>
+                <Button styleClass="sign-up-button" text="Sign up"/>
+            </children>
+        </HBox>
+
+        <!-- Main content box -->
+        <HBox AnchorPane.topAnchor="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <!-- Image for the car -->
+            <StackPane HBox.hgrow="ALWAYS" styleClass="image-container">
+                <ImageView fx:id="carImage" fitWidth="450" preserveRatio="true" styleClass="car-image">
+                    <Image url="@../../../Images/cruiser-in-snow.jpg"/>
+                </ImageView>
+            </StackPane>
+
+            <!-- Form-->
+            <VBox alignment="CENTER" spacing="15.0" styleClass="login-form-container" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="30.0" right="40.0" bottom="30.0" left="40.0" />
+                </padding>
+
+
+                <StackPane styleClass="logo-container">
+                    <Circle radius="30" styleClass="logo-circle" />
+                </StackPane>
+
+
+                <Label text="Login" styleClass="login-title">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+
+                <!-- Quote -->
+                <VBox alignment="CENTER" spacing="5.0">
+                    <Label text="&quot;Currus non solum ferrum est, sed libertas" styleClass="quote-text" textAlignment="CENTER" wrapText="true"/>
+                    <Label text="in motu.&quot;" styleClass="quote-text" textAlignment="CENTER" wrapText="true"/>
+                    <Label text="&quot;A car is not just metal, but freedom in" styleClass="quote-translation" textAlignment="CENTER" wrapText="true"/>
+                    <Label text="motion.&quot;" styleClass="quote-translation" textAlignment="CENTER" wrapText="true"/>
+                </VBox>
+
+                <Region prefHeight="20.0" />
+
+                <!-- Email text field-->
+                <VBox spacing="5.0">
+                    <Label text="Email" styleClass="field-label"/>
+                    <TextField styleClass="login-field" promptText="Enter your email"/>
+                </VBox>
+
+                <!-- Password field -->
+                <VBox spacing="5.0">
+                    <HBox alignment="CENTER_LEFT" spacing="5.0">
+                        <Label text="Password" styleClass="field-label" HBox.hgrow="ALWAYS"/>
+                        <Button text="Hide" styleClass="hide-password-button"/>
+                    </HBox>
+                    <PasswordField styleClass="login-field" promptText="Enter your password"/>
+                </VBox>
+
+                <!-- Terms Checkbox -->
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <CheckBox styleClass="terms-checkbox" selected="true"/>
+                    <Label styleClass="terms-text" wrapText="true" text="By creating an account, I agree to our Terms of use and Privacy Policy">
+                        <font>
+                            <Font size="12.0" />
+                        </font>
+                    </Label>
+                </HBox>
+
+                <!-- Login Button -->
+                <Button text="Log In" styleClass="login-button" maxWidth="Infinity"/>
+
+                <Region prefHeight="30.0" />
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>
