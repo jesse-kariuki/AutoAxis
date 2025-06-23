@@ -1,5 +1,7 @@
 package com.example.autoaxis.entities;
 
+import com.example.autoaxis.dto.CarModel;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,17 +9,74 @@ import java.sql.SQLException;
 
 public class Car {
     private int id;
-    private String make;
+    private String name;
     private String model;
     private int year;
     private double price;
     private String type; // "rent" or "buy"
     private boolean isAvailable;
     private String description;
+    private int seats;
+    private String imageUrl;
+    private String transmission;
+
+
+    private CarModel carModel;
+
+
+
+
+    public Car(int id, String name, String model, int year, double price, String type, boolean isAvailable, String description, int seats, String imageUrl, String transmission) {
+        this.id = id;
+        this.name = name;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+        this.type = type;
+        this.isAvailable = isAvailable;
+        this.description = description;
+        this.seats= seats;
+        this.imageUrl = imageUrl;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public String getImageUrl() {
+        return  this.imageUrl;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public CarModel getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(CarModel carModel) {
+        this.carModel = carModel;
+    }
+
+    public Car(int id,String name, String model, int year, double price, String type, boolean isAvailable, String description, int seats, String imageUrl, String transmission, CarModel carModel) {
+        this.id = id;
+        this.name = name;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+        this.type = type;
+        this.isAvailable = isAvailable;
+        this.description = description;
+        this.seats = seats;
+        this.imageUrl = imageUrl;
+        this.transmission = transmission;
+        this.carModel = carModel;
+    }
 
     // Constructor without ID (for adding new cars)
-    public Car(String make, String model, int year, double price, String type, boolean isAvailable, String description) {
-        this.make = make;
+    public Car(String name, String model, int year, double price, String type, boolean isAvailable, String description) {
+        this.name = name;
         this.model = model;
         this.year = year;
         this.price = price;
@@ -27,15 +86,15 @@ public class Car {
     }
 
     // Constructor with ID (for cars retrieved from DB)
-    public Car(int id, String make, String model, int year, double price, String type, boolean isAvailable, String description) {
-        this(make, model, year, price, type, isAvailable, description);
+    public Car(int id, String name, String model, int year, double price, String type, boolean isAvailable, String description) {
+        this(name, model, year, price, type, isAvailable, description);
         this.id = id;
     }
 
     // Getters and Setters
     public int getId() { return id; }
-    public String getMake() { return make; }
-    public void setMake(String make) { this.make = make; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     public String getModel() { return model; }
     public void setModel(String model) { this.model = model; }
@@ -61,7 +120,7 @@ public class Car {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, make);
+            stmt.setString(1, name);
             stmt.setString(2, model);
             stmt.setInt(3, year);
             stmt.setDouble(4, price);
@@ -90,7 +149,7 @@ public class Car {
             if (rs.next()) {
                 return new Car(
                         rs.getInt("id"),
-                        rs.getString("make"),
+                        rs.getString("name"),
                         rs.getString("model"),
                         rs.getInt("year"),
                         rs.getDouble("price"),
@@ -111,7 +170,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{id=" + id + ", make='" + make + '\'' +
+        return "Car{id=" + id + ", name='" + name + '\'' +
                 ", model='" + model + '\'' +
                 ", year=" + year +
                 ", price=" + price +
