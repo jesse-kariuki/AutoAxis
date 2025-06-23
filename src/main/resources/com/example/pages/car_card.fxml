@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox fx:id="cardRoot" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.autoaxis.controllers.car_cardController"
+      styleClass="vehicle-card" spacing="10">
+
+
+    <ImageView fx:id="carImage" fitWidth="250" fitHeight="120" styleClass="vehicle-image"/>
+    <HBox styleClass="vehicle-header">
+        <Label fx:id="carName" styleClass="vehicle-name" HBox.hgrow="ALWAYS"/>
+        <VBox alignment="CENTER_RIGHT">
+            <Label fx:id="carPrice" styleClass="vehicle-price"/>
+            <Label text="per day" styleClass="price-note"/>
+        </VBox>
+    </HBox>
+    <Label fx:id="carType" styleClass="vehicle-type"/>
+    <HBox spacing="10" styleClass="vehicle-features">
+        <HBox spacing="5" styleClass="feature-item">
+            <ImageView fitHeight="15" fitWidth="15">
+                <Image url="@../../../Images/gearshift-icon.png"/>
+            </ImageView>
+            <Label fx:id="carTransmission" styleClass="feature-text"/>
+        </HBox>
+        <HBox spacing="5" styleClass="feature-item">
+            <ImageView fitHeight="15" fitWidth="15">
+                <Image url="@../../../Images/seat-icon.png"/>
+            </ImageView>
+            <Label fx:id="carSeats" styleClass="feature-text"/>
+        </HBox>
+        <HBox spacing="5" styleClass="feature-item">
+            <ImageView fitHeight="15" fitWidth="15">
+                <Image url="@../../../Images/ac-icon.png"/>
+            </ImageView>
+            <Label fx:id="carAC" styleClass="feature-text"/>
+        </HBox>
+    </HBox>
+    <Button fx:id="viewDetailsButton" text="View Details" styleClass="details-button"/>
+</VBox>

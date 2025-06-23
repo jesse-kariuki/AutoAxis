@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autoaxis.controllers.AdminController" style="-fx-background-color: #f7fafc;">
+    <children>
+        <!-- Admin Navigation Bar -->
+        <VBox>
+            <children>
+                <HBox alignment="CENTER" spacing="30.0" style="-fx-background-color: white; -fx-padding: 15 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <children>
+                        <Button fx:id="dashboardBtn"  style="-fx-background-color: #3182ce; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 6;" text="Dashboard" />
+                        <Button fx:id="vehiclesBtn"  style="-fx-background-color: transparent; -fx-text-fill: #4a5568; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 6;" text="Vehicles" />
+                        <Button fx:id="bookingsBtn"  style="-fx-background-color: transparent; -fx-text-fill: #4a5568; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 6;" text="Bookings" />
+                        <Button fx:id="customersBtn"  style="-fx-background-color: transparent; -fx-text-fill: #4a5568; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 6;" text="Customers" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                            <children>
+                                <Label fx:id="adminNameLabel" text="Admin User" textFill="#4a5568">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Button  style="-fx-background-color: #e53e3e; -fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 8 15; -fx-background-radius: 4;" text="Logout" />
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+
+                <StackPane fx:id="contentStackPane" VBox.vgrow="ALWAYS">
+                    <children>
+                        <!-- Dashboard View -->
+                        <ScrollPane fx:id="dashboardView" fitToWidth="true">
+                            <content>
+                                <VBox spacing="30.0" style="-fx-padding: 40;">
+                                    <children>
+                                        <Label text="Dashboard" textFill="#2d3748">
+                                            <font>
+                                                <Font name="System Bold" size="28.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- Statistics Cards -->
+                                        <HBox spacing="25.0">
+                                            <children>
+                                                <!-- Total Vehicles Card -->
+                                                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="🚗" textFill="#3182ce">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="totalVehiclesLabel" text="24" textFill="#2d3748">
+                                                            <font>
+                                                                <Font name="System Bold" size="32.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Total Vehicles" textFill="#718096">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- Active Bookings Card -->
+                                                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="📋" textFill="#38a169">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="activeBookingsLabel" text="12" textFill="#2d3748">
+                                                            <font>
+                                                                <Font name="System Bold" size="32.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Active Bookings" textFill="#718096">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- Revenue Card -->
+                                                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="💰" textFill="#d69e2e">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="monthlyRevenueLabel" text="Ksh.2.4M" textFill="#2d3748">
+                                                            <font>
+                                                                <Font name="System Bold" size="32.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Monthly Revenue" textFill="#718096">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- Available Vehicles Card -->
+                                                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="✅" textFill="#38a169">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="availableVehiclesLabel" text="18" textFill="#2d3748">
+                                                            <font>
+                                                                <Font name="System Bold" size="32.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Available" textFill="#718096">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+
+                                        <!-- Recent Activity -->
+                                        <VBox spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                                            <children>
+                                                <Label text="Recent Activity" textFill="#2d3748">
+                                                    <font>
+                                                        <Font name="System Bold" size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <ListView fx:id="activityListView" prefHeight="200.0" style="-fx-background-color: #f7fafc; -fx-border-color: transparent;" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+
+                        <!-- Vehicle Management View -->
+                        <ScrollPane fx:id="vehicleManagementView" fitToWidth="true" visible="false">
+                            <content>
+                                <VBox spacing="30.0" style="-fx-padding: 40;">
+                                    <children>
+                                        <!-- Header with Add Vehicle Button -->
+                                        <HBox alignment="CENTER_LEFT">
+                                            <children>
+                                                <Label text="Vehicle Management" textFill="#2d3748" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="System Bold" size="28.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button  style="-fx-background-color: #3182ce; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 6;" text="+ Add Vehicle" />
+                                            </children>
+                                        </HBox>
+
+                                        <!-- Vehicle Table -->
+                                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                                            <children>
+                                                <HBox spacing="15.0">
+                                                    <children>
+                                                        <TextField fx:id="vehicleSearchField" promptText="Search vehicles..." style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" HBox.hgrow="ALWAYS" />
+                                                        <ComboBox fx:id="vehicleFilterCombo" prefWidth="150.0" promptText="Filter by type" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                                                    </children>
+                                                </HBox>
+                                                <TableView fx:id="vehicleTableView" prefHeight="400.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="vehicleIdColumn" prefWidth="60.0" text="ID">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="id" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="vehicleNameColumn" prefWidth="150.0" text="Vehicle">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="name" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="vehicleTypeColumn" prefWidth="100.0" text="Type">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="type" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="vehiclePriceColumn" prefWidth="120.0" text="Daily Rate">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="dailyRate" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="vehicleStatusColumn" prefWidth="100.0" text="Status">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="status" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="vehicleActionsColumn" prefWidth="120.0" text="Actions" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+
+                        <!-- Bookings View -->
+                        <ScrollPane fx:id="bookingsView" fitToWidth="true" visible="false">
+                            <content>
+                                <VBox spacing="30.0" style="-fx-padding: 40;">
+                                    <children>
+                                        <Label text="Booking Management" textFill="#2d3748">
+                                            <font>
+                                                <Font name="System Bold" size="28.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- Bookings Table -->
+                                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                                            <children>
+                                                <HBox spacing="15.0">
+                                                    <children>
+                                                        <TextField fx:id="bookingSearchField" promptText="Search bookings..." style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" HBox.hgrow="ALWAYS" />
+                                                        <ComboBox fx:id="bookingStatusFilter" prefWidth="150.0" promptText="Filter by status" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                                                    </children>
+                                                </HBox>
+                                                <TableView fx:id="bookingTableView" prefHeight="400.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="bookingIdColumn" prefWidth="80.0" text="Booking ID">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="bookingId" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="customerNameColumn" prefWidth="150.0" text="Customer">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="customerName" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="vehicleBookedColumn" prefWidth="140.0" text="Vehicle">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="vehicleName" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="pickupDateColumn" prefWidth="120.0" text="Pickup Date">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="pickupDate" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="returnDateColumn" prefWidth="120.0" text="Return Date">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="returnDate" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="bookingStatusColumn" prefWidth="100.0" text="Status">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="status" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="totalAmountColumn" prefWidth="120.0" text="Total Amount">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="totalAmount" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="bookingActionsColumn" prefWidth="120.0" text="Actions" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+
+                        <!-- Customers View -->
+                        <ScrollPane fx:id="customersView" fitToWidth="true" visible="false">
+                            <content>
+                                <VBox spacing="30.0" style="-fx-padding: 40;">
+                                    <children>
+                                        <Label text="Customer Management" textFill="#2d3748">
+                                            <font>
+                                                <Font name="System Bold" size="28.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- Customers Table -->
+                                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                                            <children>
+                                                <HBox spacing="15.0">
+                                                    <children>
+                                                        <TextField fx:id="customerSearchField" promptText="Search customers..." style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" HBox.hgrow="ALWAYS" />
+                                                        <Button style="-fx-background-color: #38a169; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 6;" text="Export" />
+                                                    </children>
+                                                </HBox>
+                                                <TableView fx:id="customerTableView" prefHeight="400.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="customerIdColumn" prefWidth="60.0" text="ID">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="customerId" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="customerFullNameColumn" prefWidth="180.0" text="Full Name">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="fullName" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="customerEmailColumn" prefWidth="200.0" text="Email">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="email" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="customerPhoneColumn" prefWidth="140.0" text="Phone">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="phone" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="totalBookingsColumn" prefWidth="100.0" text="Bookings">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="totalBookings" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="customerValueColumn" prefWidth="120.0" text="Total Spent">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="totalSpent" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn fx:id="customerActionsColumn" prefWidth="120.0" text="Actions" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </StackPane>
+            </children>
+        </VBox>
+
+        <!-- Add Vehicle Panel (Right Slide-out) -->
+        <HBox StackPane.alignment="CENTER_RIGHT">
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox fx:id="addVehiclePanel" spacing="20.0" style="-fx-background-color: white; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, -5, 0); -fx-min-width: 350;" visible="false">
+                    <children>
+                    <HBox alignment="CENTER_LEFT">
+                        <children>
+                            <Label text="Add New Vehicle" textFill="#2d3748" HBox.hgrow="ALWAYS">
+                                <font>
+                                    <Font name="System Bold" size="20.0" />
+                                </font>
+                            </Label>
+                            <Button  style="-fx-background-color: transparent; -fx-text-fill: #718096; -fx-font-size: 16px;" text="✕" />
+                        </children>
+                    </HBox>
+                    </children>
+
+                    <VBox spacing="15.0">
+                        <children>
+                            <Label text="Vehicle Information" textFill="#4a5568">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="newVehicleName" promptText="Vehicle Name (e.g., Mercedes S-class)" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
+                            <ComboBox fx:id="newVehicleType" prefWidth="200.0" promptText="Vehicle Type" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                            <TextField fx:id="newVehiclePrice" promptText="Daily Rate (Ksh)" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
+                            <ComboBox fx:id="newVehicleTransmission" prefWidth="200.0" promptText="Transmission" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                            <TextField fx:id="newVehicleSeats" promptText="Number of Seats" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
+                            <CheckBox fx:id="newVehicleAC" text="Air Conditioning" textFill="#4a5568" />
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="15.0">
+                        <children>
+                            <Label text="Vehicle Image" textFill="#4a5568">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Button  style="-fx-background-color: #e2e8f0; -fx-text-fill: #4a5568; -fx-font-size: 14px; -fx-padding: 12; -fx-background-radius: 6;" text="Choose Image File" />
+                            <Label fx:id="selectedImageLabel" text="No image selected" textFill="#718096">
+                                <font>
+                                    <Font size="12.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="10.0">
+                        <children>
+                            <Button  style="-fx-background-color: #3182ce; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12; -fx-background-radius: 6;" text="Add Vehicle" />
+                            <Button  style="-fx-background-color: #e2e8f0; -fx-text-fill: #4a5568; -fx-font-size: 14px; -fx-padding: 12; -fx-background-radius: 6;" text="Cancel" />
+                        </children>
+                    </VBox>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</StackPane>

@@ -9,8 +9,8 @@ import java.util.List;
 
 public class TransactionManager {
 
-    public List<pkg.Transaction> getTransactionsForUser(int userId) {
-        List<pkg.Transaction> transactions = new ArrayList<>();
+    public List<Transaction> getTransactionsForUser(int userId) {
+        List<Transaction> transactions = new ArrayList<>();
 
         String sql = "SELECT * FROM transactions WHERE user_id = ? ORDER BY date DESC";
 
@@ -21,7 +21,7 @@ public class TransactionManager {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                pkg.Transaction tx = new pkg.Transaction(
+                Transaction tx = new Transaction(
                         rs.getInt("id"),
                         rs.getInt("user_id"),
                         rs.getInt("car_id"),
@@ -40,8 +40,8 @@ public class TransactionManager {
     }
 
     // Optional: for admin to get all transactions
-    public List<pkg.Transaction> getAllTransactions() {
-        List<pkg.Transaction> transactions = new ArrayList<>();
+    public List<Transaction> getAllTransactions() {
+        List<Transaction> transactions = new ArrayList<>();
 
         String sql = "SELECT * FROM transactions ORDER BY date DESC";
 
@@ -50,7 +50,7 @@ public class TransactionManager {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                pkg.Transaction tx = new pkg.Transaction(
+                Transaction tx = new Transaction(
                         rs.getInt("id"),
                         rs.getInt("user_id"),
                         rs.getInt("car_id"),

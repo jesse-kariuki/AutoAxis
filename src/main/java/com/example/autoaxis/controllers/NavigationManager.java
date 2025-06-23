@@ -25,6 +25,10 @@ public class NavigationManager {
         navigationHistory = new Stack<>();
     }
 
+    public Stack<String> getNavigationHistory() {
+        return navigationHistory;
+    }
+
     public static NavigationManager getInstance() {
         if(instance == null) {
             instance = new NavigationManager();

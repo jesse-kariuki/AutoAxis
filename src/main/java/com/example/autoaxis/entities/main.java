@@ -119,7 +119,7 @@ public class main {
             System.out.println("Available Cars:");
             for (Car car : availableCars) {
                 System.out.println("ID: " + car.getId() +
-                        " | " + car.getMake() +
+                        " | " + car.getName() +
                         " " + car.getModel() +
                         " | Year: " + car.getYear() +
                         " | Price: $" + car.getPrice());
