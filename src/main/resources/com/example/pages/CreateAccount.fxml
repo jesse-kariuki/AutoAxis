@@ -23,7 +23,7 @@
         <HBox alignment="CENTER_RIGHT" layoutX="0.0" layoutY="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
             <children>
                 <Label styleClass="login-text" text="Already have an account? " />
-                <Hyperlink fx:id="loginLink" styleClass="login-link" text="Log in" />
+                <Hyperlink fx:id="loginLink" styleClass="login-link" text="Log in" onAction="#handleSignIn" />
             </children>
         </HBox>
 

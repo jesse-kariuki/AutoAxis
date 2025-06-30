@@ -17,7 +17,7 @@ public class MainApplication extends Application {
         URL url = getClass().getResource("/com/example/pages/MainWindow.fxml");
         System.out.println("FXML URL: " + url); // Should NOT be null
         FXMLLoader fxmlLoader = new FXMLLoader(url);
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("AutoAxis");
         stage.setScene(scene);
 //        stage.setResizable(false);

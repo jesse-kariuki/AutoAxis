@@ -27,7 +27,7 @@
         <HBox spacing="10.0" alignment="CENTER" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
             <children>
                 <Label text="No Account?" styleClass="secondary-text"/>
-                <Button styleClass="sign-up-button" text="Sign up"/>
+                <Button styleClass="sign-up-button" text="Sign up" onAction="#handleSignUp"/>
             </children>
         </HBox>
 
@@ -71,7 +71,7 @@
                 <!-- Email text field-->
                 <VBox spacing="5.0">
                     <Label text="Email" styleClass="field-label"/>
-                    <TextField styleClass="login-field" promptText="Enter your email"/>
+                    <TextField fx:id="emailField" styleClass="login-field" promptText="Enter your email"/>
                 </VBox>
 
                 <!-- Password field -->

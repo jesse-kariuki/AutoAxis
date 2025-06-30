@@ -362,3 +362,18 @@
 .view-details-button:pressed {
     -fx-background-color: #0f1419;
 }
+
+
+.checkout-button {
+    -fx-background-color: #4CAF50; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.checkout-button:hover {
+    -fx-background-color: #45a049; /* Darker green on hover */
+    -fx-cursor: hand;
+}
