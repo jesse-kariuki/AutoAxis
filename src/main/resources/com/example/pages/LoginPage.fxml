@@ -80,7 +80,7 @@
                         <Label text="Password" styleClass="field-label" HBox.hgrow="ALWAYS"/>
                         <Button text="Hide" styleClass="hide-password-button"/>
                     </HBox>
-                    <PasswordField styleClass="login-field" promptText="Enter your password"/>
+                    <PasswordField fx:id="passwordField" styleClass="login-field" promptText="Enter your password"/>
                 </VBox>
 
                 <!-- Terms Checkbox -->
