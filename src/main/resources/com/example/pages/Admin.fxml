@@ -273,7 +273,7 @@
                                                     <columns>
                                                         <TableColumn fx:id="bookingIdColumn" prefWidth="80.0" text="Booking ID">
                                                             <cellValueFactory>
-                                                                <PropertyValueFactory property="bookingId" />
+                                                                <PropertyValueFactory property="booking_id" />
                                                             </cellValueFactory>
                                                         </TableColumn>
                                                         <TableColumn fx:id="customerNameColumn" prefWidth="150.0" text="Customer">
@@ -329,7 +329,7 @@
                                                     <columns>
                                                         <TableColumn fx:id="customerIdColumn" prefWidth="60.0" text="ID">
                                                             <cellValueFactory>
-                                                                <PropertyValueFactory property="customerId" />
+                                                                <PropertyValueFactory property="customer_id" />
                                                             </cellValueFactory>
                                                         </TableColumn>
                                                         <TableColumn fx:id="customerFullNameColumn" prefWidth="180.0" text="Full Name">

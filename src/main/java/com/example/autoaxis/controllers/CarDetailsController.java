@@ -72,43 +72,43 @@ public class CarDetailsController implements Initializable {
     // Checkout handlers for each car
     @FXML
     private void handleMaybackCheckout() {
-        CarModel mayback = new CarModel("Mercedes Mayback", "Sedan", "Automatic", 4, true, "/Images/mercedes-mayback-card.jpg");
+        CarModel mayback = new CarModel(1,"Mercedes Mayback", "Sedan", "Automatic", 4, true, "/Images/mercedes-mayback-card.jpg");
         handleCheckout(mayback, 24000, maybackStartDate.getValue(), maybackEndDate.getValue());
     }
 
     @FXML
     private void handleSClassCheckout() {
-        CarModel sClass = new CarModel("Mercedes S-class", "Sedan", "Automatic", 5, true, "/Images/mercedes-S-class-sport.jpg");
+        CarModel sClass = new CarModel(2,"Mercedes S-class", "Sedan", "Automatic", 5, true, "/Images/mercedes-S-class-sport.jpg");
         handleCheckout(sClass, 32500, sClassStartDate.getValue(), sClassEndDate.getValue());
     }
 
     @FXML
     private void handleGleCheckout() {
-        CarModel gle = new CarModel("Mercedes GLE", "SUV", "Automatic", 5, true, "/Images/mercede-gle.png");
+        CarModel gle = new CarModel(3,"Mercedes GLE", "SUV", "Automatic", 5, true, "/Images/mercede-gle.png");
         handleCheckout(gle, 44000, gleStartDate.getValue(), gleEndDate.getValue());
     }
 
     @FXML
     private void handleNineOneOneCheckout() {
-        CarModel nineOneOne = new CarModel("Porsche 911", "Sports Car", "Automatic", 2, true, "/Images/porsche-sports.jpg");
+        CarModel nineOneOne = new CarModel(4,"Porsche 911", "Sports Car", "Automatic", 2, true, "/Images/porsche-sports.jpg");
         handleCheckout(nineOneOne, 39000, nineOneOneStartDate.getValue(), nineOneOneEndDate.getValue());
     }
 
     @FXML
     private void handleCrownCheckout() {
-        CarModel crown = new CarModel("Toyota Crown", "Sedan", "Automatic", 5, true, "/Images/toyota-crown.jpg");
+        CarModel crown = new CarModel(5,"Toyota Crown", "Sedan", "Automatic", 5, true, "/Images/toyota-crown.jpg");
         handleCheckout(crown, 35000, crownStartDate.getValue(), crownEndDate.getValue());
     }
 
     @FXML
     private void handleLandcruiserCheckout() {
-        CarModel landcruiser = new CarModel("Landcruiser", "SUV", "Automatic", 7, true, "/Images/toyota-landcruiser.jpg");
+        CarModel landcruiser = new CarModel(8,"Landcruiser", "SUV", "Automatic", 7, true, "/Images/toyota-landcruiser.jpg");
         handleCheckout(landcruiser, 50000, landcruiserStartDate.getValue(), landcruiserEndDate.getValue());
     }
 
     @FXML
     private void handleCayenneCheckout() {
-        CarModel cayenne = new CarModel("Porsche Cayenne", "SUV", "Automatic", 5, true, "/Images/porsche-suv.jpg");
+        CarModel cayenne = new CarModel(6,"Porsche Cayenne", "SUV", "Automatic", 5, true, "/Images/porsche-suv.jpg");
         handleCheckout(cayenne, 24000, cayenneStartDate.getValue(), cayenneEndDate.getValue());
     }
 

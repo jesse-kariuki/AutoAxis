@@ -2,6 +2,7 @@ package com.example.autoaxis.controllers;
 
 import com.example.autoaxis.dto.RentalOrder;
 import com.example.autoaxis.entities.DatabaseConnection;
+import com.example.autoaxis.entities.User;
 
 import java.sql.Connection;
 import java.time.LocalDate;
@@ -20,6 +21,9 @@ public class AppContext {
     public static MainWindowController mainWindowController;
     public static CarDetailsController carDetailsController;
     public static Connection DB;
+
+    public static User loggedInUser;
+    public static String role;
 
 
 

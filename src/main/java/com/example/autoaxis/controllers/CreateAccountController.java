@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 public class CreateAccountController {
 
+    @FXML private TextField roleField;
     @FXML
     private TextField emailField;
 
@@ -40,8 +41,17 @@ public class CreateAccountController {
     public void handleAccountCreation(ActionEvent event) {
         String email = emailField.getText().trim();
         String password = passwordField.getText().trim();
-        String role = "renter"; // Default role
         String username = email.split("@")[0]; // Basic username logic
+
+        // Get role, provide a default if empty
+        String role = roleField.getText().trim();
+        if (role.isEmpty()) {
+            role = "renter"; // Set a default role, e.g., "renter" or "buyer"
+            System.out.println("DEBUG: Role field was empty, defaulting to: " + role);
+        } else {
+            System.out.println("DEBUG: Role from UI: " + role);
+        }
+
 
         if (email.isEmpty() || password.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Error", "Email and password cannot be empty.");

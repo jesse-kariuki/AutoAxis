@@ -29,7 +29,6 @@ public class LoginPageController {
     private PasswordField passwordField;
 
     @FXML
-
     private void handleLogin(ActionEvent event) {
         String email = emailField.getText();
         String password = passwordField.getText();
@@ -39,35 +38,55 @@ public class LoginPageController {
             return;
         }
 
-        try (Connection conn = AppContext.DB) {
-            String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, email);
-            stmt.setString(2, password); // NOTE: Should ideally hash password
+        AuthManager authManager = new AuthManager();
+        User loggedInUser = null; // Declare User object to hold the result
 
-            ResultSet rs = stmt.executeQuery();
+        try {
+            loggedInUser = authManager.login(email, password); // Use the AuthManager.login method
 
-            if (rs.next()) {
+            if (loggedInUser != null) {
                 showAlert(Alert.AlertType.INFORMATION, "Success", "Login successful!");
 
-                // ✅ ✅ Load the Main Window
-                Parent mainRoot = FXMLLoader.load(getClass().getResource("/com/example/pages/MainWindow.fxml"));
+                AppContext.loggedInUser = loggedInUser; // Store the logged-in user in AppContext
+
+                Parent root = null; // Declare Parent root outside the if-else
+                String fxmlPath;
+                double stageWidth, stageHeight;
+                boolean resizable;
+
+                // Determine which FXML to load based on role
+                if (AppContext.role.equalsIgnoreCase("admin")) {
+                    System.out.println("DEBUG: User is admin, loading admin page.");
+                    fxmlPath = "/com/example/pages/Admin.fxml"; // Path to your admin FXML
+                    stageWidth = 908.7; // Example dimensions for admin window
+                    stageHeight = 647.3;
+                    resizable = true;
+                } else {
+                    // Default for other roles (renter, buyer, etc.)
+                    fxmlPath = "/com/example/pages/MainWindow.fxml";
+                    stageWidth = 800;
+                    stageHeight = 600;
+                    resizable = true;
+                }
+
+                root = FXMLLoader.load(getClass().getResource(fxmlPath));
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(mainRoot));
-                stage.setWidth(1000); // optional
-                stage.setHeight(700); // optional
-                stage.setResizable(true); // optional
+                stage.setScene(new Scene(root));
+                stage.setWidth(stageWidth);
+                stage.setHeight(stageHeight);
+                stage.setResizable(resizable);
                 stage.show();
 
             } else {
+                // AuthManager.login already prints messages for invalid credentials
                 showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid email or password.");
             }
-
-        } catch (SQLException | IOException e) {
+        } catch (IOException e) { // Catch IOException from FXMLLoader.load
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Database Error", "Could not connect to the database.");
+            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Could not load the next page.");
         }
     }
+
 
     @FXML
     public void handleSignUp(ActionEvent event) {

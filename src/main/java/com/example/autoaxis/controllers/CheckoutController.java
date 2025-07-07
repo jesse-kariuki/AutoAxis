@@ -57,7 +57,7 @@ public class CheckoutController {
     private RentalOrder rentalOrder;
     private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
 
-    private BookingDAO bookingDAO;
+    private BookingDAO bookingDAO = new BookingDAO();
 
     public void initialize() {
 
@@ -254,9 +254,11 @@ public class CheckoutController {
 
 
         try {
+
+            System.out.println("rentalOrder = " + rentalOrder.getCarModel().getId());
             String bookingId = generateBookingReference(); // You can use UUID.randomUUID().toString() for stronger IDs
-            String customerId = UUID.randomUUID().toString(); // Placeholder: You'd get this from a logged-in user or generate
-            String vehicleId = rentalOrder.getCarModel().getName(); // Placeholder: Use a unique ID for the car, not name
+            String customerId = String.valueOf(AppContext.loggedInUser.getId()); // Placeholder: You'd get this from a logged-in user or generate
+            String vehicleId = String.valueOf(rentalOrder.getCarModel().getId()); // Placeholder: Use a unique ID for the car, not name
 
             // Create a Bookings DTO
             Bookings newBooking = new Bookings(

@@ -1,52 +1,44 @@
 package com.example.autoaxis.dto;
 
-import com.example.autoaxis.controllers.AppContext;
-import com.example.autoaxis.entities.User;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 public class Bookings {
 
-    private String bookingId;
-    private String customerId;
-    private String carId;
-    private String startDate;
-    private String endDate;
-    private Double totalPrice;
+    private String booking_id;
+    private String customer_id;
+    private String vehicle_id;
+    private String pickup_date;
+    private String return_date;
+    private Double total_amount;
 
-    public Bookings(String bookingId, String customerId, String carId, String startDate, String endDate, Double totalPrice) {
-        this.bookingId = bookingId;
-        this.customerId = customerId;
-        this.carId = carId;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.totalPrice = totalPrice;
+    public Bookings(String booking_id, String customer_id, String vehicle_id, String pickup_date, String return_date, Double total_amount) {
+        this.booking_id = booking_id;
+        this.customer_id = customer_id;
+        this.vehicle_id = vehicle_id;
+        this.pickup_date = pickup_date;
+        this.return_date = return_date;
+        this.total_amount = total_amount;
     }
 
-    public String getBookingId() {
-        return bookingId;
+    public String getBooking_id() {
+        return booking_id;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public String getCustomer_id() {
+        return customer_id;
     }
 
-    public String getCarId() {
-        return carId;
+    public String getVehicle_id() {
+        return vehicle_id;
     }
 
-    public String getStartDate() {
-        return startDate;
+    public String getPickup_date() {
+        return pickup_date;
     }
 
-    public String getEndDate() {
-        return endDate;
+    public String getReturn_date() {
+        return return_date;
     }
 
-    public Double getTotalPrice() {
-        return totalPrice;
+    public Double getTotal_amount() {
+        return total_amount;
     }
 }

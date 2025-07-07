@@ -151,6 +151,21 @@ public class AdminController {
     public void handleLogout(ActionEvent event) {
         System.out.println("Logout clicked");
         // Add logout logic here
+
+        try {
+            Scene currentScene = ((Node) event.getSource()).getScene();
+            currentScene.getWindow().hide();
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("/com/example/pages/LoginPage.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene loginScene = new Scene(loginRoot);
+            stage.setScene(loginScene);
+            stage.setWidth(900);
+            stage.setHeight(600);
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -286,7 +301,7 @@ public class AdminController {
             vehicleBookedColumn.setCellValueFactory(new PropertyValueFactory<>("vehicle_id"));
             pickupDateColumn.setCellValueFactory(new PropertyValueFactory<>("pickup_date"));
             returnDateColumn.setCellValueFactory(new PropertyValueFactory<>("return_date"));
-            totalAmountColumn.setCellValueFactory(new PropertyValueFactory<>("total_price"));
+            totalAmountColumn.setCellValueFactory(new PropertyValueFactory<>("total_amount"));
 
 
             bookingTableView.setItems(FXCollections.observableArrayList(bookings));

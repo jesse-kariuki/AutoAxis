@@ -20,6 +20,25 @@ public class CarModel {
         this.imageUrl = path;
     }
 
+    public CarModel(int id, String name, String type, String imageUrl, String transmission, int seats, boolean hasAC) {
+
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.imageUrl = imageUrl;
+        this.transmission = transmission;
+        this.seats = seats;
+        this.hasAC = hasAC;
+    }
+    public CarModel(int id, String name, String type, String transmission, int seats, boolean hasAC, String imageUrl){
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.transmission = transmission;
+        this.seats = seats;
+        this.hasAC = hasAC;
+        this.imageUrl = imageUrl;
+    }
 
     public String getIsAvailable() {
 
