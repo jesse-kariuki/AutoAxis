@@ -1,84 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import java.net.URL?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background-pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autoaxis.controllers.CreateAccountController">
-    <stylesheets>
-        <URL value="@../../../styles.css" />
-    </stylesheets>
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.autoaxis.controllers.CreateAccountController"
+            prefHeight="600.0" prefWidth="800.0"
+            styleClass="background-pane">
+
     <children>
-        <!-- Top "Log in" link -->
-        <HBox alignment="CENTER_RIGHT" layoutX="0.0" layoutY="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <!-- Link to login -->
+        <HBox alignment="CENTER_RIGHT" AnchorPane.topAnchor="20.0" AnchorPane.rightAnchor="20.0">
             <children>
-                <Label styleClass="login-text" text="Already have an account? " />
-                <Hyperlink fx:id="loginLink" styleClass="login-link" text="Log in" onAction="#handleSignIn" />
+                <Label text="Already have an account?" />
+                <Hyperlink text="Log in" onAction="#handleSignIn" />
             </children>
         </HBox>
 
-        <!-- Profile circle -->
-        <Circle centerX="400.0" centerY="80.0" radius="30.0" styleClass="profile-circle" />
+        <!-- Profile icon -->
+        <Circle centerX="400.0" centerY="80.0" radius="30.0" />
 
-        <!-- Main content container -->
-        <VBox alignment="TOP_CENTER" layoutX="250.0" layoutY="130.0" prefWidth="300.0" styleClass="form-container">
+        <!-- Signup form -->
+        <VBox alignment="TOP_CENTER" layoutX="250.0" layoutY="130.0" prefWidth="300.0" spacing="10">
             <children>
-                <!-- Form header -->
-                <Text styleClass="header-text" text="Create an account" textAlignment="CENTER">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="5.0" />
-                    </VBox.margin>
+                <Text text="Create an account">
+                    <font><Font size="24.0" /></font>
                 </Text>
 
-                <!-- Form subheader -->
-                <Text styleClass="subheader-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis maximus" textAlignment="CENTER" wrappingWidth="280.0">
-                    <VBox.margin>
-                        <Insets bottom="25.0" />
-                    </VBox.margin>
-                </Text>
+                <Label text="Email:" />
+                <TextField fx:id="emailField" promptText="Enter your email" />
 
-                <!-- Email field -->
-                <Label styleClass="field-label" text="Email">
-                    <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" />
-                    </VBox.margin>
-                </Label>
-                <TextField fx:id="emailField" styleClass="input-field" />
+                <Label text="Password:" />
+                <PasswordField fx:id="passwordField" promptText="Enter your password" />
 
-                <!-- Password field -->
-                <Label styleClass="field-label" text="Password">
-                    <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" top="15.0" />
-                    </VBox.margin>
-                </Label>
-                <PasswordField fx:id="passwordField" styleClass="input-field" />
+                <Button fx:id="signUpButton"
+                        text="Sign up"
+                        defaultButton="true"
+                        onAction="#handleAccountCreation"
+                        style="-fx-background-color: #3182ce; -fx-text-fill: white;" />
 
-                <!-- Sign-up button -->
-                <Button fx:id="signUpButton" defaultButton="true" mnemonicParsing="false" styleClass="signup-button" text="Sign up">
-                    <VBox.margin>
-                        <Insets top="25.0" />
-                    </VBox.margin>
-                </Button>
-
-                <!-- Terms text -->
-                <Text styleClass="terms-text" text="By creating an account, you agree to the Terms of use and Privacy Policy." textAlignment="CENTER" wrappingWidth="280.0">
-                    <VBox.margin>
-                        <Insets top="15.0" />
-                    </VBox.margin>
-                </Text>
+                <Text wrappingWidth="280"
+                      text="By creating an account, you agree to the Terms of use and Privacy Policy."
+                      style="-fx-font-size: 11px; -fx-text-alignment: center;" />
             </children>
         </VBox>
     </children>

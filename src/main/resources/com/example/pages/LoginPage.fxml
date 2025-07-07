@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
-
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.shape.Circle?>
+
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.autoaxis.controllers.LoginPageController"
@@ -46,11 +46,9 @@
                     <Insets top="30.0" right="40.0" bottom="30.0" left="40.0" />
                 </padding>
 
-
                 <StackPane styleClass="logo-container">
                     <Circle radius="30" styleClass="logo-circle" />
                 </StackPane>
-
 
                 <Label text="Login" styleClass="login-title">
                     <font>
@@ -93,8 +91,8 @@
                     </Label>
                 </HBox>
 
-                <!-- Login Button -->
-                <Button text="Log In" styleClass="login-button" maxWidth="Infinity"/>
+                <!-- Login Button (Now working!) -->
+                <Button text="Log In" styleClass="login-button" maxWidth="Infinity" onAction="#handleLogin"/>
 
                 <Region prefHeight="30.0" />
             </VBox>
