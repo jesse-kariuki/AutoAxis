@@ -2,203 +2,182 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autoaxis.controllers.CheckoutController" fitToWidth="true" style="-fx-background-color: #f7fafc;">
-    <content>
-        <VBox spacing="30.0" style="-fx-padding: 40;">
-        <VBox>
-        <!-- Page Title -->
-        <Label text="Checkout" textFill="#2d3748">
-            <font>
-                <Font name="System Bold" size="28.0" />
-            </font>
-        </Label>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.autoaxis.controllers.CheckoutController"
+            stylesheets="@../../../cardetails.css"
+            styleClass="main-container">
 
-        <!-- Main Content -->
-        <HBox spacing="40.0">
-            <children>
-                <!-- Left Side - Order Summary -->
-                <VBox spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" HBox.hgrow="ALWAYS">
-                    <children>
-                        <Label text="Order Summary" textFill="#2d3748">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                        </Label>
+    <!-- Header -->
+    <top>
+        <VBox styleClass="nav-container">
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header-content">
+                <Label text="AutoAxis Car Rental" styleClass="company-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Checkout" styleClass="page-title"/>
+            </HBox>
+        </VBox>
+    </top>
 
-                        <!-- Selected Vehicle -->
-                        <HBox spacing="15.0" style="-fx-background-color: #f7fafc; -fx-background-radius: 8; -fx-padding: 15;">
-                            <children>
-                                <ImageView fx:id="selectedVehicleImage" fitHeight="80.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 8;">
-                                    <image>
-                                        <Image url="@../../../Images/s-class.jpg" />
-                                    </image>
-                                </ImageView>
-                                <VBox spacing="5.0" HBox.hgrow="ALWAYS">
-                                    <children>
-                                        <Label fx:id="selectedVehicleName" text="Mercedes S-class" textFill="#2d3748">
-                                            <font>
-                                                <Font name="System Bold" size="16.0" />
-                                            </font>
-                                        </Label>
-                                        <Label fx:id="selectedVehicleType" text="Sedan" textFill="#718096">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </Label>
-                                        <HBox spacing="15.0">
-                                            <children>
-                                                <Label text="🔧 Automatic" textFill="#718096" />
-                                                <Label text="👥 5 Seats" textFill="#718096" />
-                                                <Label text="❄️ Air Conditioner" textFill="#718096" />
-                                            </children>
-                                        </HBox>
-                                    </children>
+    <!-- Main Content -->
+    <center>
+        <ScrollPane styleClass="content-scroll" fitToWidth="true" fitToHeight="true">
+            <VBox spacing="30" styleClass="checkout-container">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+
+                <!-- Order Summary and Customer Info Container -->
+                <HBox spacing="30" styleClass="main-checkout-content">
+
+                    <!-- Order Summary -->
+                    <VBox spacing="20" styleClass="order-summary-section" HBox.hgrow="ALWAYS">
+                        <Label text="Order Summary" styleClass="section-title"/>
+
+                        <!-- Car Details -->
+                        <VBox spacing="15" styleClass="car-summary-card">
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <ImageView fx:id="carImageView" fitWidth="120" fitHeight="80" styleClass="car-summary-image"/>
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label fx:id="carNameLabel" styleClass="car-summary-name"/>
+                                    <Label fx:id="carTypeLabel" styleClass="car-summary-type"/>
+                                    <HBox spacing="15">
+                                        <Label fx:id="carTransmissionLabel" styleClass="car-summary-feature"/>
+                                        <Label fx:id="carSeatsLabel" styleClass="car-summary-feature"/>
+                                        <Label fx:id="carACLabel" styleClass="car-summary-feature"/>
+                                    </HBox>
                                 </VBox>
-                            </children>
-                        </HBox>
+                            </HBox>
+                        </VBox>
 
                         <!-- Rental Details -->
-                        <VBox spacing="15.0">
-                            <children>
-                                <Label text="Rental Details" textFill="#2d3748">
-                                    <font>
-                                        <Font name="System Bold" size="16.0" />
-                                    </font>
-                                </Label>
-                                <HBox>
-                                    <children>
-                                        <Label text="Pick-up Date:" textFill="#718096" HBox.hgrow="ALWAYS" />
-                                        <Label fx:id="pickupDateLabel" text="June 10, 2025" textFill="#2d3748">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Return Date:" textFill="#718096" HBox.hgrow="ALWAYS" />
-                                        <Label fx:id="returnDateLabel" text="June 15, 2025" textFill="#2d3748">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Rental Days:" textFill="#718096" HBox.hgrow="ALWAYS" />
-                                        <Label fx:id="rentalDaysLabel" text="5 days" textFill="#2d3748">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
+                        <VBox spacing="15" styleClass="rental-details-section">
+                            <Label text="Rental Details" styleClass="subsection-title"/>
+
+                            <HBox spacing="20">
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label text="Pick-up Date" styleClass="detail-label"/>
+                                    <Label fx:id="pickupDateLabel" styleClass="detail-value"/>
+                                </VBox>
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label text="Return Date" styleClass="detail-label"/>
+                                    <Label fx:id="returnDateLabel" styleClass="detail-value"/>
+                                </VBox>
+                            </HBox>
+
+                            <HBox spacing="20">
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label text="Rental Days" styleClass="detail-label"/>
+                                    <Label fx:id="rentalDaysLabel" styleClass="detail-value"/>
+                                </VBox>
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label text="Daily Rate" styleClass="detail-label"/>
+                                    <Label fx:id="dailyRateLabel" styleClass="detail-value"/>
+                                </VBox>
+                            </HBox>
                         </VBox>
 
                         <!-- Price Breakdown -->
-                        <Separator />
-                        <VBox spacing="10.0">
-                            <children>
-                                <HBox>
-                                    <children>
-                                        <Label text="Daily Rate:" textFill="#718096" HBox.hgrow="ALWAYS" />
-                                        <Label fx:id="dailyRateLabel" text="Ksh.32,500" textFill="#2d3748" />
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Subtotal:" textFill="#718096" HBox.hgrow="ALWAYS" />
-                                        <Label fx:id="subtotalLabel" text="Ksh.162,500" textFill="#2d3748" />
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Tax (16%):" textFill="#718096" HBox.hgrow="ALWAYS" />
-                                        <Label fx:id="taxLabel" text="Ksh.26,000" textFill="#2d3748" />
-                                    </children>
-                                </HBox>
-                                <Separator />
-                                <HBox>
-                                    <children>
-                                        <Label text="Total:" textFill="#2d3748" HBox.hgrow="ALWAYS">
-                                            <font>
-                                                <Font name="System Bold" size="18.0" />
-                                            </font>
-                                        </Label>
-                                        <Label fx:id="totalLabel" text="Ksh.188,500" textFill="#3182ce">
-                                            <font>
-                                                <Font name="System Bold" size="18.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
+                        <VBox spacing="10" styleClass="price-breakdown-section">
+                            <HBox>
+                                <Label text="Subtotal" styleClass="price-label" HBox.hgrow="ALWAYS"/>
+                                <Label fx:id="subtotalLabel" styleClass="price-value"/>
+                            </HBox>
+                            <HBox>
+                                <Label text="Tax (16%)" styleClass="price-label" HBox.hgrow="ALWAYS"/>
+                                <Label fx:id="taxLabel" styleClass="price-value"/>
+                            </HBox>
+                            <Separator/>
+                            <HBox>
+                                <Label text="Total" styleClass="total-label" HBox.hgrow="ALWAYS"/>
+                                <Label fx:id="totalLabel" styleClass="total-value"/>
+                            </HBox>
                         </VBox>
-                    </children>
-                </VBox>
+                    </VBox>
 
-                <!-- Right Side - Customer Details & Payment -->
-                <VBox spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" HBox.hgrow="ALWAYS">
-                    <children>
-                        <!-- Customer Information -->
-                        <VBox spacing="15.0">
-                            <children>
-                                <Label text="Customer Information" textFill="#2d3748">
-                                    <font>
-                                        <Font name="System Bold" size="20.0" />
-                                    </font>
-                                </Label>
-                                <TextField fx:id="firstNameField" promptText="First Name" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                                <TextField fx:id="lastNameField" promptText="Last Name" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                                <TextField fx:id="emailField" promptText="Email Address" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                                <TextField fx:id="phoneField" promptText="Phone Number" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                                <TextField fx:id="licenseField" promptText="Driver's License Number" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                            </children>
-                        </VBox>
+                    <!-- Customer Information -->
+                    <VBox spacing="20" styleClass="customer-info-section" HBox.hgrow="ALWAYS">
+                        <Label text="Customer Information" styleClass="section-title"/>
+
+                        <GridPane hgap="15" vgap="15" styleClass="form-grid">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="100"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="100"/>
+                            </columnConstraints>
+
+                            <Label text="First Name" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <TextField fx:id="firstNameField" styleClass="form-field" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+                            <Label text="Last Name" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <TextField fx:id="lastNameField" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                            <Label text="Email Address" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+                            <TextField fx:id="emailField" styleClass="form-field" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+                            <Label text="Phone Number" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                            <TextField fx:id="phoneField" styleClass="form-field" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+                            <Label text="Driver's License Number" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                            <TextField fx:id="licenseField" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        </GridPane>
 
                         <!-- Payment Information -->
-                        <VBox spacing="15.0">
-                            <children>
-                                <Label text="Payment Information" textFill="#2d3748">
-                                    <font>
-                                        <Font name="System Bold" size="20.0" />
-                                    </font>
-                                </Label>
-                                <ComboBox fx:id="paymentMethodCombo" prefWidth="200.0" promptText="Payment Method" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6;" />
-                                <TextField fx:id="cardNumberField" promptText="Card Number" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                                <HBox spacing="10.0">
-                                    <children>
-                                        <TextField fx:id="expiryField" promptText="MM/YY" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="cvvField" promptText="CVV" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" HBox.hgrow="ALWAYS" />
-                                    </children>
-                                </HBox>
-                                <TextField fx:id="cardHolderField" promptText="Cardholder Name" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;" />
-                            </children>
+                        <VBox spacing="15" styleClass="payment-section">
+                            <Label text="Payment Information" styleClass="section-title"/>
+
+                            <VBox spacing="10">
+                                <Label text="Payment Method" styleClass="form-label"/>
+                                <ComboBox fx:id="paymentMethodCombo" styleClass="form-field" prefWidth="200">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Credit Card"/>
+                                            <String fx:value="Debit Card"/>
+                                            <String fx:value="PayPal"/>
+                                            <String fx:value="Bank Transfer"/>
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+
+                            <VBox spacing="10">
+                                <Label text="Card Number" styleClass="form-label"/>
+                                <TextField fx:id="cardNumberField" styleClass="form-field" promptText="1234 5678 9012 3456"/>
+                            </VBox>
+
+                            <HBox spacing="15">
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label text="Expiry Date" styleClass="form-label"/>
+                                    <TextField fx:id="expiryField" styleClass="form-field" promptText="MM/YY"/>
+                                </VBox>
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label text="CVV" styleClass="form-label"/>
+                                    <TextField fx:id="cvvField" styleClass="form-field" promptText="123"/>
+                                </VBox>
+                            </HBox>
+
+                            <VBox spacing="10">
+                                <Label text="Cardholder Name" styleClass="form-label"/>
+                                <TextField fx:id="cardholderField" styleClass="form-field"/>
+                            </VBox>
                         </VBox>
 
-                        <!-- Terms and Conditions -->
-                        <CheckBox fx:id="termsCheckbox" text="I agree to the Terms and Conditions" textFill="#718096" />
+                        <!-- Terms and Actions -->
+                        <VBox spacing="15" styleClass="terms-actions-section">
+                            <CheckBox fx:id="termsCheckBox" text="I agree to the Terms and Conditions" styleClass="terms-checkbox"/>
 
-                        <!-- Action Buttons -->
-                        <HBox spacing="15.0">
-                            <children>
-                                <Button  style="-fx-background-color: #e2e8f0; -fx-text-fill: #4a5568; -fx-font-size: 14px; -fx-padding: 12 25; -fx-background-radius: 6;" text="Back" HBox.hgrow="ALWAYS" />
-                                <Button fx:id="completeBookingBtn"  style="-fx-background-color: #3182ce; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 25; -fx-background-radius: 6;" text="Complete Booking" HBox.hgrow="ALWAYS" />
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
-            </children>
-        </HBox>
-        </VBox>
-        </VBox>
-    </content>
-
-</ScrollPane>
+                            <HBox spacing="15">
+                                <Button fx:id="backButton" text="Back to Cars" styleClass="back-button" HBox.hgrow="ALWAYS"/>
+                                <Button fx:id="confirmButton" text="Confirm Booking" styleClass="confirm-button" HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

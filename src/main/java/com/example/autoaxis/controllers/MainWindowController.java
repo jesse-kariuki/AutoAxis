@@ -55,7 +55,7 @@ public class MainWindowController implements Initializable {
 
 
     @FXML
-    private void handleHomeClick(){
+    public void handleHomeClick(){
         if (activeButton == homeButton)return;
 
         setActiveButton(homeButton);
@@ -85,7 +85,7 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void handleCheckoutClick() {
+    public void handleCheckoutClick() {
         if (activeButton == checkoutButton) return;
 
         setActiveButton(checkoutButton);

@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.DatePicker?>
 <BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="main-container" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autoaxis.controllers.CarDetailsController">
 
     <stylesheets>
@@ -59,9 +60,17 @@
                                             <Image url="@../../../Images/mercedes-S-class-sport.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
-                                </VBox>
 
+                                    <!-- Add DatePickers -->
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="sClassStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="sClassEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleSClassCheckout" />
+                                </VBox>
                                 <!-- Right section - Technical specifications -->
                                 <VBox spacing="25" styleClass="specs-section" HBox.hgrow="ALWAYS">
                                     <Label styleClass="specs-title" text="Technical Specification" />
@@ -205,7 +214,14 @@
                                             <Image url="@../../../Images/mercedes-mayback-card.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="maybackStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="maybackEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleMaybackCheckout" />
                                 </VBox>
 
                                 <!-- Right section - Technical specifications -->
@@ -353,7 +369,14 @@
                                             <Image url="@../../../Images/mercede-gle.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="gleStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="gleEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleGleCheckout" />
                                 </VBox>
 
                                 <!-- Right section - Technical specifications -->
@@ -500,7 +523,14 @@
                                             <Image url="@../../../Images/porsche-sports.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="nineOneOneStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="nineOneOneEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleNineOneOneCheckout" />
                                 </VBox>
 
                                 <!-- Right section - Technical specifications -->
@@ -647,7 +677,14 @@
                                             <Image url="@../../../Images/toyota-crown.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="crownStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="crownEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleCrownCheckout" />
                                 </VBox>
 
                                 <!-- Right section - Technical specifications -->
@@ -794,7 +831,14 @@
                                             <Image url="@../../../Images/toyota-landcruiser.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="landcruiserStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="landcruiserEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleLandcruiserCheckout" />
                                 </VBox>
 
                                 <!-- Right section - Technical specifications -->
@@ -941,7 +985,14 @@
                                             <Image url="@../../../Images/porsche-suv.jpg" />
                                         </ImageView>
                                     </VBox>
-                                    <Button styleClass="checkout-button" text="Checkout" />
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="date-label" text="From:" />
+                                        <DatePicker fx:id="cayenneStartDate" styleClass="date-picker" />
+                                        <Label styleClass="date-label" text="To:" />
+                                        <DatePicker fx:id="cayenneEndDate" styleClass="date-picker" />
+                                    </HBox>
+
+                                    <Button styleClass="checkout-button" text="Checkout" onAction="#handleCayenneCheckout" />
                                 </VBox>
 
                                 <!-- Right section - Technical specifications -->

@@ -15,12 +15,13 @@ public class CarDAO {
 
 
 
+    private ArrayList<Car> cars;
 
     public List<Car> getAllCars() throws SQLException {
         if (AppContext.DB == null || AppContext.DB.isClosed()) {
             throw new SQLException("Database connection is not available");
         }
-        List<Car> cars = new ArrayList<>();
+        cars = new ArrayList<>();
         String sql = "SELECT * FROM car";
         try (PreparedStatement stmt = AppContext.DB.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
@@ -42,5 +43,53 @@ public class CarDAO {
         }
         return cars;
     }
+
+
+    public List<CarModel> getDisplayCars() {
+        List<CarModel> carModels = new ArrayList<>();
+        for (Car car : this.cars) {
+            carModels.add(new CarModel(
+                    car.getId(),
+                    car.getFullName(),
+                    car.getType(),
+                    car.getIsAvailable(),
+                    car.getPrice()
+
+            ));
+        }
+        return carModels;
+    }
+
+    public boolean insertCar(Car car) throws SQLException {
+        if (AppContext.DB == null || AppContext.DB.isClosed()) {
+            throw new SQLException("Database connection is not available");
+        }
+        String sql = "INSERT INTO car (name, model, year, price, type, is_available, description, seats, image_url, transmission) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (
+             PreparedStatement stmt = AppContext.DB.prepareStatement(sql)) {
+
+
+            stmt.setString(1, car.getName());
+            stmt.setString(2, car.getModel());
+            stmt.setInt(3, car.getYear());
+            stmt.setDouble(4, car.getPrice());
+            stmt.setString(5, car.getType());
+            stmt.setBoolean(6, car.isAvailable());
+            stmt.setString(7, car.getDescription());
+            stmt.setInt(8, car.getSeats());
+            stmt.setString(9, car.getImageUrl());
+            stmt.setString(10, car.getTransmission());
+
+            int rowsInserted = stmt.executeUpdate();
+            return rowsInserted > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
 

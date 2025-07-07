@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="531.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autoaxis.controllers.AddVehiclesController">
+
+    <stylesheets>
+        <!-- Link to the CSS file for styling -->
+        <URL value="@adminstyles.css" />
+    </stylesheets>
+   <ScrollPane layoutX="-34.0" layoutY="-7.0" prefHeight="708.0" prefWidth="560.0" StackPane.alignment="CENTER_RIGHT">
+      <content>
+      
+          <HBox prefHeight="705.0" prefWidth="373.0">
+              <children>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <VBox fx:id="addVehiclePanel" prefHeight="705.0" prefWidth="361.0" spacing="20.0" styleClass="panel">
+                      <children>
+                          <HBox alignment="CENTER_LEFT">
+                              <children>
+                                  <Label text="Add New Vehicle" textFill="#2d3748" HBox.hgrow="ALWAYS">
+                                      <font>
+                                          <Font name="System Bold" size="20.0" />
+                                      </font>
+                                  </Label>
+      
+                              </children>
+                          </HBox>
+      
+                          <VBox prefHeight="557.0" prefWidth="301.0" spacing="15.0">
+                              <children>
+                                  <Label styleClass="section-label" text="Vehicle Information">
+                                      <font>
+                                          <Font name="System Bold" size="14.0" />
+                                      </font>
+                                  </Label>
+                                  <TextField fx:id="newVehicleName" prefHeight="40.0" prefWidth="246.0" promptText="Vehicle Name ..." styleClass="search-field" />
+                           <TextField fx:id="newVehicleModel" prefHeight="60.0" prefWidth="301.0" promptText="Vehicle Model" styleClass="search-field" />
+                           <TextField fx:id="newVehicleYear" promptText="Year" styleClass="search-field" />
+                                  <ComboBox fx:id="newVehicleType" promptText="Vehicle Type" styleClass="search-field" />
+                                  <TextField fx:id="newVehiclePrice" promptText="Daily Rate (Ksh)" styleClass="search-field" />
+                                  <ComboBox fx:id="newVehicleTransmission" promptText="Transmission" styleClass="search-field" />
+                                  <TextField fx:id="newVehicleSeats" promptText="Number of Seats" styleClass="search-field" />
+                           <TextField fx:id="newVehicleDescription" prefHeight="128.0" prefWidth="301.0" promptText="Description">
+                              <styleClass>
+                                 <String fx:value="search-field" />
+                                 <String fx:value="search-field-desc" />
+                              </styleClass>
+                           </TextField>
+                                  <CheckBox fx:id="newVehicleAC" text="Air Conditioning" />
+                              </children>
+                          </VBox>
+      
+                          <VBox prefHeight="76.0" prefWidth="301.0" spacing="15.0">
+                              <children>
+                                  <Label styleClass="section-label" text="Vehicle Image">
+                                      <font>
+                                          <Font name="System Bold" size="14.0" />
+                                      </font>
+                                  </Label>
+                                  <Button fx:id="chooseImageBtn" onAction="#handleChooseImage" styleClass="grey-button" text="Choose Image File" />
+                                  <Label fx:id="selectedImageLabel" text="No image selected" textFill="#718096">
+                                      <font>
+                                          <Font size="12.0" />
+                                      </font>
+                                  </Label>
+                              </children>
+                          </VBox>
+      
+                          <VBox spacing="10.0">
+                              <children>
+                                  <Button fx:id="saveVehicleBtn" onAction="#handleSaveVehicle" styleClass="primary-button" text="Add Vehicle" />
+                                  <Button fx:id="cancelAddBtn" onAction="#handleCancelAdd" styleClass="cancel-button" text="Cancel" />
+                              </children>
+                          </VBox>
+                      </children>
+                  </VBox>
+              </children>
+          </HBox>
+      </content>
+   </ScrollPane>
+
+</AnchorPane>

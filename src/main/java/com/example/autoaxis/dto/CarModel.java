@@ -10,10 +10,39 @@ public class CarModel {
     private String transmission;
     private int seats;
     private boolean hasAC;
+
+    public CarModel(String name, String type, String transmission, int seats, boolean isavailable, String path) {
+        this.name = name;
+        this.type = type;
+        this.transmission = transmission;
+        this.seats = seats;
+        this.hasAC = isavailable;
+        this.imageUrl = path;
+    }
+
+
+    public String getIsAvailable() {
+
+        Random random = new Random();
+        // Randomly assign AC availability for demonstration purposes
+        return random.nextBoolean() ? "Available" : "Not Available";
+    }
+
     private double price;
     private String model;
+    private String isAvailable;
 
+    public void setIsAvailable(String isAvailable) {
+        this.isAvailable = isAvailable;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -64,6 +93,9 @@ public class CarModel {
         return hasAC || random.nextBoolean();
     }
 
+    public CarModel() {
+    }
+
     public void setHasAC(boolean hasAC) {
         this.hasAC = hasAC;
     }
@@ -76,5 +108,11 @@ public class CarModel {
         this.price = price;
     }
 
-
+    public CarModel(int id, String name, String type, String isAvailable, double price) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.isAvailable = isAvailable;
+        this.price = price;
+    }
 }

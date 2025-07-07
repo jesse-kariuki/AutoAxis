@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 
 public class Car {
     private int id;
@@ -19,6 +20,7 @@ public class Car {
     private int seats;
     private String imageUrl;
     private String transmission;
+
 
 
     private CarModel carModel;
@@ -84,6 +86,21 @@ public class Car {
         this.isAvailable = isAvailable;
         this.description = description;
     }
+    //name, type, price, transmission, seats,ac, model, year, description, status, url
+
+
+    public Car(String name, String type, double price, String transmission, int seats, String model, int year, String description, boolean isAvailable, String imageUrl) {
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.transmission = transmission;
+        this.seats = seats;
+        this.model = model;
+        this.year = year;
+        this.description = description;
+        this.isAvailable = isAvailable;
+        this.imageUrl = imageUrl;
+    }
 
     // Constructor with ID (for cars retrieved from DB)
     public Car(int id, String name, String model, int year, double price, String type, boolean isAvailable, String description) {
@@ -108,12 +125,19 @@ public class Car {
     public String getType() { return type; }
     public void setType(String type) { this.type = type; }
 
-    public boolean isAvailable() { return isAvailable; }
+    public boolean isAvailable() { Random random = new Random();
+        // Randomly assign AC availability for demonstration purposes
+        return isAvailable || random.nextBoolean();}
     public void setAvailable(boolean available) { isAvailable = available; }
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
+    public String getIsAvailable() {
+        Random random = new Random();
+        // Randomly assign availability for demonstration purposes
+        return isAvailable || random.nextBoolean() ? "Available" : "Not Available";
+    }
     // Save car to database
     public boolean saveToDatabase() {
         String sql = "INSERT INTO cars (make, model, year, price, type, is_available, description) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -137,6 +161,13 @@ public class Car {
         }
     }
 
+    public String getFullName(){
+        return name + " " + model;
+    }
+
+    public String getFullType(){
+        return this.type;
+    }
     // Load car by ID
     public static Car getCarById(int carId) {
         String sql = "SELECT * FROM cars WHERE id = ?";

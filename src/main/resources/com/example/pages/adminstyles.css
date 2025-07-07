@@ -1,0 +1,111 @@
+/* Page background */
+.stack-pane {
+    -fx-background-color: #f7fafc;
+}
+
+/* Navbar */
+.navbar {
+    -fx-background-color: white;
+    -fx-padding: 15 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+/* Navbar buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4a5568;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 6;
+
+}
+
+.nav-button:hover {
+    -fx-cursor: hand;
+}
+.nav-button-active {
+    -fx-background-color: #3182ce;
+    -fx-text-fill: white;
+}
+
+/* Logout button */
+.logout-button {
+    -fx-background-color: #e53e3e;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 8 15;
+    -fx-background-radius: 4;
+}
+
+/* Card containers */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* Search & filter input */
+.search-field {
+    -fx-background-color: #f7fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10;
+}
+
+
+/* Green button */
+.green-button {
+    -fx-background-color: #38a169;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 6;
+}
+
+/* Primary button */
+.primary-button {
+    -fx-background-color: #3182ce;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 12;
+    -fx-background-radius: 6;
+}
+
+/* Cancel button */
+.cancel-button {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #4a5568;
+    -fx-font-size: 14px;
+    -fx-padding: 12;
+    -fx-background-radius: 6;
+}
+
+/* Grey button (file select) */
+.grey-button {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #4a5568;
+    -fx-font-size: 14px;
+    -fx-padding: 12;
+    -fx-background-radius: 6;
+}
+
+/* Close button in panel */
+.close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #718096;
+    -fx-font-size: 16px;
+}
+
+/* Label text */
+.section-label {
+    -fx-text-fill: #4a5568;
+}
+
+.panel {
+    -fx-background-color: white;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, -5, 0);
+    -fx-min-width: 350;
+}

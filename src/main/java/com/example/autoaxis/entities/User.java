@@ -11,27 +11,40 @@ public class User {
     protected String email;
     protected String password;
     protected String role;
+    protected String phone;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public User(int id, String username, String email, String password, String role) {
+    public User(int id, String username, String email, String password, String phone) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.phone = phone;
     }
 
-    public User(String username, String email, String password, String role) {
+
+    public User(String username, String email, String password, String phone) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.phone = phone;
     }
 
+    public User(int id, String username, String email, String password) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+
+    public String getPhone() {
+        return phone;
+    }
 
     public int getId() { return id; }
     public String getUsername() { return username; }
