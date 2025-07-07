@@ -9,7 +9,7 @@ public class DatabaseConnection {
 
     private static final String URL = "jdbc:mysql://localhost:3306/autoaxis";
     private static final String USER = "root";
-    private static final String PASSWORD = "Passwords$uck0";
+    private static final String PASSWORD = "";
 
     private static Connection connection = null;
 

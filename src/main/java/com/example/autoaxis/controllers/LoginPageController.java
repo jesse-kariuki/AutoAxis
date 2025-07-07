@@ -1,19 +1,23 @@
 package com.example.autoaxis.controllers;
 
+import com.example.autoaxis.entities.AuthManager;
+import com.example.autoaxis.entities.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
 
 
 public class LoginPageController {
@@ -25,6 +29,7 @@ public class LoginPageController {
     private PasswordField passwordField;
 
     @FXML
+
     private void handleLogin(ActionEvent event) {
         String email = emailField.getText();
         String password = passwordField.getText();
@@ -38,19 +43,20 @@ public class LoginPageController {
             String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, email);
-            stmt.setString(2, password); // Ideally, use hashed passwords.
+            stmt.setString(2, password); // NOTE: Should ideally hash password
 
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // Login successful
                 showAlert(Alert.AlertType.INFORMATION, "Success", "Login successful!");
 
-                // Load next scene
-                Parent dashboardRoot = FXMLLoader.load(getClass().getResource("/com/example/pages/MainWindow.fxml"));
+                // ✅ ✅ Load the Main Window
+                Parent mainRoot = FXMLLoader.load(getClass().getResource("/com/example/pages/MainWindow.fxml"));
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Scene scene = new Scene(dashboardRoot);
-                stage.setScene(scene);
+                stage.setScene(new Scene(mainRoot));
+                stage.setWidth(1000); // optional
+                stage.setHeight(700); // optional
+                stage.setResizable(true); // optional
                 stage.show();
 
             } else {
@@ -59,12 +65,12 @@ public class LoginPageController {
 
         } catch (SQLException | IOException e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Database Error", "An error occurred while connecting to the database.");
+            showAlert(Alert.AlertType.ERROR, "Database Error", "Could not connect to the database.");
         }
     }
 
     @FXML
-    private void handleSignUp(ActionEvent event) {
+    public void handleSignUp(ActionEvent event) {
         try {
             Parent signupRoot = FXMLLoader.load(getClass().getResource("/com/example/pages/CreateAccount.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -74,7 +80,7 @@ public class LoginPageController {
             stage.setHeight(600);
             stage.setResizable(false);
             stage.show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

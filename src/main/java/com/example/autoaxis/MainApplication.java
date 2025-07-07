@@ -14,7 +14,9 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        URL url = getClass().getResource("/com/example/pages/MainWindow.fxml");
+        new AppContext(); // This will initialize AppContext.DB
+
+        URL url = getClass().getResource("/com/example/pages/loginpage.fxml");
         System.out.println("FXML URL: " + url); // Should NOT be null
         FXMLLoader fxmlLoader = new FXMLLoader(url);
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
@@ -22,6 +24,7 @@ public class MainApplication extends Application {
         stage.setScene(scene);
 //        stage.setResizable(false);
         stage.show();
+
     }
 
     public static void main(String[] args) {
