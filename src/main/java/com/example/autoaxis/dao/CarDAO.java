@@ -1,5 +1,7 @@
 package com.example.autoaxis.dao;
 
+//SINGLE RESPONSIBILITY PRINCIPLE (SRP) - CarDAO is responsible for data access operations related to Car entities
+// IT HAS ONE TASK ONLY - TO HANDLE DATABASE OPERATIONS FOR CARS
 import com.example.autoaxis.controllers.AppContext;
 import com.example.autoaxis.dto.CarModel;
 import com.example.autoaxis.entities.Car;
@@ -11,12 +13,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarDAO {
+public class CarDAO implements CarReader, CarWriter{
 
 
 
     private ArrayList<Car> cars;
 
+    @Override
     public List<Car> getAllCars() throws SQLException {
         if (AppContext.DB == null || AppContext.DB.isClosed()) {
             throw new SQLException("Database connection is not available");
@@ -45,6 +48,7 @@ public class CarDAO {
     }
 
 
+    @Override
     public List<CarModel> getDisplayCars() {
         List<CarModel> carModels = new ArrayList<>();
         for (Car car : this.cars) {
@@ -60,6 +64,7 @@ public class CarDAO {
         return carModels;
     }
 
+    @Override
     public boolean insertCar(Car car) throws SQLException {
         if (AppContext.DB == null || AppContext.DB.isClosed()) {
             throw new SQLException("Database connection is not available");

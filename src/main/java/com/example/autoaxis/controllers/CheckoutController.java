@@ -14,6 +14,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
+//DEPENDENCY INVERSION PRINCIPLE - HIGH LEVEL MODULES SHOULD NOT DEPEND ON LOW LEVEL MODULES
+
+// BOTH SHOULD DEPEND ON ABSTRACTIONS - HERE, CHECKOUT CONTROLLER DEPENDS ON BOOKINGDAO FOR DATA ACCESS
 public class CheckoutController {
 
     // Car Summary
@@ -58,6 +61,7 @@ public class CheckoutController {
     private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
 
     private BookingDAO bookingDAO = new BookingDAO();
+    //EXAMPLE OF DEPENDENCY INVERSION PRINCIPLE - HIGH LEVEL MODULES SHOULD NOT DEPEND ON LOW LEVEL MODULES
 
     public void initialize() {
 

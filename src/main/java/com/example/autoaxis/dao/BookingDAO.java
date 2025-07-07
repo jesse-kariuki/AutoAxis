@@ -13,11 +13,15 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingDAO {
+
+//SINGLE RESPOSIBILITY PRINCIPLE (SRP) - BookingDAO is responsible for data access operations related to Booking entities
+// IT HAS ONE TASK ONLY - TO HANDLE DATABASE OPERATIONS FOR BOOKINGS
+public class BookingDAO  {
 
     private static final DateTimeFormatter INPUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("MMM dd, yyyy");
 
     private List<Bookings> bookings = new ArrayList<Bookings>();
+
 
     public List<Bookings> getAllBookings() throws SQLException {
         if (AppContext.DB == null || AppContext.DB.isClosed()) {

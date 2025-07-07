@@ -40,6 +40,10 @@ public class CarDetailsController implements Initializable {
     @FXML private DatePicker cayenneStartDate;
     @FXML private DatePicker cayenneEndDate;
 
+    //OPEN CLOSE PRINCIPLE
+    // This controller handles the car details and checkout process for various car models.
+    // It follows the Open/Closed Principle by allowing new car models to be added without modifying existing code.
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AppContext.carDetailsController = this;
@@ -70,6 +74,8 @@ public class CarDetailsController implements Initializable {
     }
 
     // Checkout handlers for each car
+    // VIOLATION OF SINGLE RESPONSIBILITY PRINCIPLE (SRP)
+    // Each method handles the checkout process for a specific car model, including validation and order creation.
     @FXML
     private void handleMaybackCheckout() {
         CarModel mayback = new CarModel(1,"Mercedes Mayback", "Sedan", "Automatic", 4, true, "/Images/mercedes-mayback-card.jpg");
@@ -111,6 +117,10 @@ public class CarDetailsController implements Initializable {
         CarModel cayenne = new CarModel(6,"Porsche Cayenne", "SUV", "Automatic", 5, true, "/Images/porsche-suv.jpg");
         handleCheckout(cayenne, 24000, cayenneStartDate.getValue(), cayenneEndDate.getValue());
     }
+
+    // This method handles the checkout process for a car, including date validation and order creation.
+    // ADHERES TO OPEN/CLOSED PRINCIPLE (OCP)
+    // IT IS OPEN FOR EXTENSION (new car models can be added) BUT CLOSED FOR MODIFICATION (existing code does not change).
 
     private void handleCheckout(CarModel car, double dailyPrice, LocalDate startDate, LocalDate endDate) {
         try {

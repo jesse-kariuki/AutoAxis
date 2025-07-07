@@ -1,7 +1,8 @@
 package com.example.autoaxis.entities;
 
 public class Admin extends User {
-
+    //usage of Liskov Substitution Principle (LSP) - Admin is a User and can be used wherever a User is expected
+    // Admin class extends User class and inherits its properties and methods
     public Admin(String username, String email, String password, String role) {
         super(username, email, password, role);
     }

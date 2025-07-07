@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+// SINGLE RESPONSIBILITY PRINCIPLE (SRP) - UserDAO is responsible for data access operations related to User entities
+// IT HAS ONE TASK ONLY - TO HANDLE DATABASE OPERATIONS FOR USERS
 public class UserDAO {
 
     private List<User> users = new ArrayList<>();

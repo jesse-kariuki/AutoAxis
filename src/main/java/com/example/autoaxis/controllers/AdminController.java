@@ -2,6 +2,7 @@ package com.example.autoaxis.controllers;
 
 import com.example.autoaxis.dao.BookingDAO;
 import com.example.autoaxis.dao.CarDAO;
+import com.example.autoaxis.dao.CarReader;
 import com.example.autoaxis.dao.UserDAO;
 import com.example.autoaxis.dto.Bookings;
 import com.example.autoaxis.dto.CarModel;
@@ -252,12 +253,12 @@ public class AdminController {
 
         new AppContext();
 
-        CarDAO carDAO = new CarDAO();
+        CarReader carReader = new CarDAO();
         try{
 
-            List<Car> cars = carDAO.getAllCars();
+            List<Car> cars = carReader.getAllCars();
 
-           List<CarModel> carModels = carDAO.getDisplayCars();
+           List<CarModel> carModels = carReader.getDisplayCars();
 
 
 
