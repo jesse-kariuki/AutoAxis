@@ -1,0 +1,44 @@
+
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: autoaxis_mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Passwords$uck0'
+      MYSQL_DATABASE: autoaxis
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 5s
+      retries: 10
+      interval: 5s
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - autoaxis_network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: autoaxis_app_container
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: autoaxis
+      DB_USER: root
+      DB_PASSWORD: 'Passwords$uck0'
+      DISPLAY: host.docker.internal:0.0
+
+    networks:
+      - autoaxis_network
+networks:
+  autoaxis_network:
+    driver: bridge
+volumes:
+  db_data:

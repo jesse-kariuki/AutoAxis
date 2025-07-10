@@ -16,7 +16,7 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         new AppContext(); // This will initialize AppContext.DB
 
-        URL url = getClass().getResource("/com/example/pages/loginpage.fxml");
+        URL url = getClass().getResource("/com/example/pages/LoginPage.fxml");
         System.out.println("FXML URL: " + url); // Should NOT be null
         FXMLLoader fxmlLoader = new FXMLLoader(url);
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);

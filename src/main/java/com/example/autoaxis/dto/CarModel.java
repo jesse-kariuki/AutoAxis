@@ -134,4 +134,8 @@ public class CarModel {
         this.isAvailable = isAvailable;
         this.price = price;
     }
+
+    public boolean isAvailable() {
+        return "Available".equalsIgnoreCase(isAvailable);
+    }
 }

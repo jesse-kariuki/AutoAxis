@@ -133,7 +133,7 @@ public class Car {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
-    public String getIsAvailable() {
+    public boolean getIsAvailable() {
         Random random = new Random();
         // Randomly assign availability for demonstration purposes
         return isAvailable || random.nextBoolean() ? "Available" : "Not Available";
